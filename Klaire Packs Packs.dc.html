@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics="">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&amp;family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#F5EFE3;color:#26221D;font-family:'Public Sans',system-ui,sans-serif}
+  a{color:#B85C38;text-decoration:none}
+  a:hover{color:#8f4526}
+  a.nav{color:#4a443c}
+  a.nav:hover{color:#B85C38}
+  section[id],div[id]{scroll-margin-top:82px}
+  input:focus,textarea:focus{outline:none;border-color:#B85C38}
+</style>
+</helmet>
+
+<div>
+  <div style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:15px 44px;background:rgba(245,239,227,.9);backdrop-filter:blur(10px);border-bottom:1px solid rgba(38,34,29,.1)">
+    <a href="Klaire%20Packs%20Home.dc.html" style="display:flex;align-items:center;gap:11px;color:#26221D">
+      <div style="width:30px;height:30px;border-radius:50%;background:#B85C38;box-shadow:inset 0 0 0 3px #F5EFE3, inset 0 0 0 4px #B85C38"></div>
+      <span style="font-family:'Spectral',serif;font-weight:600;font-size:20px;letter-spacing:-.01em">Klaire Packs</span>
+    </a>
+    <div style="display:flex;align-items:center;gap:26px;font-size:14.5px;font-weight:500">
+      <a class="nav" href="Klaire%20Packs%20Packs.dc.html" style="color:#B85C38;font-weight:600">The packs</a>
+      <a class="nav" href="Klaire%20Packs%20For%20Centres.dc.html">For centres</a>
+      <a class="nav" href="Klaire%20Packs%20Impact.dc.html">Impact</a>
+      <a class="nav" href="Klaire%20Packs%20Donate.dc.html">Donate</a>
+      <a href="Klaire%20Packs%20Sponsor.dc.html" style="background:#B85C38;color:#fff;padding:10px 18px;border-radius:100px;font-weight:600">Sponsor a pack</a>
+    </div>
+  </div>
+
+  <div style="max-width:840px;margin:0 auto;padding:72px 44px 40px;text-align:center">
+    <div style="display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#B85C38;margin-bottom:20px"><span style="width:22px;height:1.5px;background:#B85C38"></span>The packs</div>
+    <h1 style="font-family:'Spectral',serif;font-weight:500;font-size:52px;line-height:1.05;letter-spacing:-.02em;margin:0 0 20px;text-wrap:pretty">Small things, at exactly the right moment.</h1>
+    <p style="font-size:18px;line-height:1.6;color:#524b42;margin:0;text-wrap:pretty">Each Klaire Pack is built around one stage of recovery. Every item is deliberate and screened for a clinic setting.</p>
+  </div>
+
+  <sc-if value="{{ showFramework }}" hint-placeholder-val="{{ true }}">
+  <div style="max-width:1200px;margin:0 auto;padding:8px 44px 56px">
+    <div style="text-align:center;max-width:680px;margin:0 auto 30px">
+      <h2 style="font-family:'Spectral',serif;font-weight:500;font-size:32px;letter-spacing:-.02em;margin:0 0 12px">Our framework</h2>
+      <p style="font-size:16.5px;line-height:1.6;color:#524b42;margin:0;text-wrap:pretty">Every Klaire Pack is built from the same four parts. Something practical, something comforting, something for the hands and mind, and one original. All three packs meet this criteria.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px">
+      <div style="background:#fff;border:1px solid rgba(38,34,29,.09);border-radius:14px;padding:24px"><div style="font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#9c6a3f;margin-bottom:10px">Practical</div><p style="font-size:14.5px;line-height:1.55;color:#524b42;margin:0">Something someone needs on hand, and may have arrived without.</p></div>
+      <div style="background:#fff;border:1px solid rgba(38,34,29,.09);border-radius:14px;padding:24px"><div style="font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#9c6a3f;margin-bottom:10px">Comfort</div><p style="font-size:14.5px;line-height:1.55;color:#524b42;margin:0">Warmth, something to eat, drink or hold when the day is long.</p></div>
+      <div style="background:#fff;border:1px solid rgba(38,34,29,.09);border-radius:14px;padding:24px"><div style="font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#6E7D5B;margin-bottom:10px">Craft &amp; mindfulness</div><p style="font-size:14.5px;line-height:1.55;color:#524b42;margin:0">Something to do with the hands or a moment for the mind.&nbsp;</p></div>
+      <div style="background:#26221D;color:#F5EFE3;border-radius:14px;padding:24px"><div style="font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#D89468;margin-bottom:10px">THE ORIGINAL TOUCH</div><p style="font-size:14.5px;line-height:1.55;color:#e7dfd2;margin:0">One thing we make for Klaire Packs or something people tend to keep.</p></div>
+    </div>
+  </div>
+  </sc-if>
+
+  <sc-if value="{{ showProcess }}" hint-placeholder-val="{{ true }}">
+  <div style="background:#EFE7D6;border-top:1px solid rgba(38,34,29,.1);border-bottom:1px solid rgba(38,34,29,.1)">
+    <div style="max-width:1200px;margin:0 auto;padding:52px 44px;display:grid;grid-template-columns:repeat(3,1fr);gap:30px">
+      <div><div style="font-family:'Spectral',serif;font-size:22px;color:#B85C38;margin-bottom:12px">01</div><h3 style="font-family:'Spectral',serif;font-weight:600;font-size:20px;margin:0 0 8px">Select the stage</h3><p style="font-size:14.5px;line-height:1.6;color:#524b42;margin:0">Choose On arrival, Mid-journey, On leaving or all three.</p></div>
+      <div><div style="font-family:'Spectral',serif;font-size:22px;color:#B85C38;margin-bottom:12px">02</div><h3 style="font-family:'Spectral',serif;font-weight:600;font-size:20px;margin:0 0 8px">We tailor the pack</h3><p style="font-size:14.5px;line-height:1.6;color:#524b42;margin:0">Practical, comfort and mindfulness items chosen using our framework.</p></div>
+      <div><div style="font-family:'Spectral',serif;font-size:22px;color:#B85C38;margin-bottom:12px">03</div><h3 style="font-family:'Spectral',serif;font-weight:600;font-size:20px;margin:0 0 8px">Ready to hand over</h3><p style="font-size:14.5px;line-height:1.6;color:#524b42;margin:0">Packs arrive at the centre, ready to place directly in someone’s hands.</p></div>
+    </div>
+  </div>
+  </sc-if>
+
+  <section id="welcome" style="max-width:1200px;margin:0 auto;padding:64px 44px 0">
+    <div style="display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:start">
+      <div style="position:sticky;top:100px;display:flex;flex-direction:column;gap:14px">
+        <img src="img/pack-welcome.jpeg" alt="The Welcome pack" style="width:100%;height:300px;object-fit:cover;border-radius:16px;display:block">
+        <div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#B85C38">On arrival</div>
+        <h2 style="font-family:'Spectral',serif;font-weight:600;font-size:34px;margin:0">Welcome</h2>
+        <p style="font-size:16px;line-height:1.6;color:#524b42;margin:0">For the first hard days, when everything feels overwhelming.</p>
+        <a href="Klaire%20Packs%20Sponsor.dc.html#welcome" style="align-self:flex-start;background:#B85C38;color:#fff;padding:12px 22px;border-radius:100px;font-weight:600;font-size:14.5px">Sponsor this pack — $30</a>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
+        <div style="background:#fff;border:1px solid rgba(38,34,29,.09);border-radius:14px;padding:26px">
+          <div style="font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#9c6a3f;margin-bottom:12px">Practical</div>
+          <ul style="list-style:none;padding:0;margin:0;font-size:14.5px;line-height:1.5;color:#3a352e;display:flex;flex-direction:column;gap:9px"><li>SPF50+ small tube</li><li>Yoga socks</li><li>Period products</li></ul>
+        </div>
+        <div style="background:#fff;border:1px solid rgba(38,34,29,.09);border-radius:14px;padding:26px">
+          <div style="font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#9c6a3f;margin-bottom:12px">Comfort</div>
+          <ul style="list-style:none;padding:0;margin:0;font-size:14.5px;line-height:1.5;color:#3a352e;display:flex;flex-direction:column;gap:9px"><li>Peppermint tea bag</li><li>Eye mask</li></ul>
+        </div>
+        <div style="background:#fff;border:1px solid rgba(38,34,29,.09);border-radius:14px;padding:26px">
+          <div style="font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#6E7D5B;margin-bottom:12px">Craft &amp; mindfulness</div>
+          <p style="font-size:14.5px;line-height:1.55;color:#3a352e;margin:0">Small stone and stone felt pen</p>
+        </div>
+        <div style="background:#26221D;color:#F5EFE3;border-radius:14px;padding:26px">
+          <div style="font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#D89468;margin-bottom:12px">The original touch</div>
+          <p style="font-size:14.5px;line-height:1.55;color:#e7dfd2;margin:0">A set of 10 breathing cards</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="steady" style="max-width:1200px;margin:0 auto;padding:64px 44px 0">
+    <div style="border-top:1px solid rgba(38,34,29,.1);padding-top:64px;display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:start">
+      <div style="position:sticky;top:100px;display:flex;flex-direction:column;gap:14px">
+        <img src="img/pack-steady.jpeg" alt="The Steady pack" style="width:100%;height:300px;object-fit:cover;border-radius:16px;display:block">
+        <div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6E7D5B">Mid-journey</div>
+        <h2 style="font-family:'Spectral',serif;font-weight:600;font-size:34px;margin:0">Steady</h2>
+        <p style="font-size:16px;line-height:1.6;color:#524b42;margin:0">For the middle stretch, when motivation dips and progress feels slow.</p>
+        <a href="Klaire%20Packs%20Sponsor.dc.html#steady" style="align-self:flex-start;background:#B85C38;color:#fff;padding:12px 22px;border-radius:100px;font-weight:600;font-size:14.5px">Sponsor this pack — $35</a>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
+        <div style="background:#fff;border:1px solid rgba(38,34,29,.09);border-radius:14px;padding:26px">
+          <div style="font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#9c6a3f;margin-bottom:12px">Practical</div>
+          <ul style="list-style:none;padding:0;margin:0;font-size:14.5px;line-height:1.5;color:#3a352e;display:flex;flex-direction:column;gap:9px"><li>Journal &amp; Pen</li><li>Stamps</li><li>Fresh comfy socks</li></ul>
+        </div>
+        <div style="background:#fff;border:1px solid rgba(38,34,29,.09);border-radius:14px;padding:26px">
+          <div style="font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#9c6a3f;margin-bottom:12px">Comfort</div>
+          <ul style="list-style:none;padding:0;margin:0;font-size:14.5px;line-height:1.5;color:#3a352e;display:flex;flex-direction:column;gap:9px"><li>Rooibos tea bag</li><li>Chocolate Square</li></ul>
+        </div>
+        <div style="background:#fff;border:1px solid rgba(38,34,29,.09);border-radius:14px;padding:26px">
+          <div style="font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#6E7D5B;margin-bottom:12px">Craft &amp; mindfulness</div>
+          <p style="font-size:14.5px;line-height:1.55;color:#3a352e;margin:0">Origami bookmark Instruction Card &amp; 2 sheets of origami paper</p>
+        </div>
+        <div style="background:#26221D;color:#F5EFE3;border-radius:14px;padding:26px">
+          <div style="font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#D89468;margin-bottom:12px">The original touch</div>
+          <p style="font-size: 14.5px; line-height: 1.55; color: #FFFFFF; margin: 0"><span style="color: rgb(58, 53, 46); background-color: rgb(255, 255, 255);"><span style="color: rgb(231, 223, 210); background-color: rgb(38, 34, 29);">Reflection prompt cards</span></span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="onward" style="max-width:1200px;margin:0 auto;padding:64px 44px 0">
+    <div style="border-top:1px solid rgba(38,34,29,.1);padding-top:64px;display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:start">
+      <div style="position:sticky;top:100px;display:flex;flex-direction:column;gap:14px">
+        <img src="img/pack-onward.jpeg" alt="The Onward pack" style="width:100%;height:300px;object-fit:cover;border-radius:16px;display:block">
+        <div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9c6a3f">On leaving</div>
+        <h2 style="font-family:'Spectral',serif;font-weight:600;font-size:34px;margin:0">Onward</h2>
+        <p style="font-size:16px;line-height:1.6;color:#524b42;margin:0">For leaving — equal parts practical and hopeful.</p>
+        <a href="Klaire%20Packs%20Sponsor.dc.html#onward" style="align-self:flex-start;background:#B85C38;color:#fff;padding:12px 22px;border-radius:100px;font-weight:600;font-size:14.5px">Sponsor this pack — $40</a>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px">
+        <div style="background:#fff;border:1px solid rgba(38,34,29,.09);border-radius:14px;padding:26px">
+          <div style="font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#9c6a3f;margin-bottom:12px">Practical</div>
+          <ul style="list-style:none;padding:0;margin:0;font-size:14.5px;line-height:1.5;color:#3a352e;display:flex;flex-direction:column;gap:9px"><li>Lip balm</li><li>Cap or Beanie&nbsp;</li><li>Printed local resources card<br><span style="color:#7a7268;font-size:13px">support groups &amp; helplines</span></li></ul>
+        </div>
+        <div style="background:#fff;border:1px solid rgba(38,34,29,.09);border-radius:14px;padding:26px">
+          <div style="font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#9c6a3f;margin-bottom:12px">Comfort</div>
+          <ul style="list-style:none;padding:0;margin:0;font-size:14.5px;line-height:1.5;color:#3a352e;display:flex;flex-direction:column;gap:9px"><li>Peppermint tea bag</li><li>Small crochet soft toy</li></ul>
+        </div>
+        <div style="background:#fff;border:1px solid rgba(38,34,29,.09);border-radius:14px;padding:26px">
+          <div style="font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#6E7D5B;margin-bottom:12px">Craft &amp; mindfulness</div>
+          <p style="font-size:14.5px;line-height:1.55;color:#3a352e;margin:0">Air dry clay</p>
+        </div>
+        <div style="background:#26221D;color:#F5EFE3;border-radius:14px;padding:26px">
+          <div style="font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#D89468;margin-bottom:12px">The original touch</div>
+          <p style="font-size:14.5px;line-height:1.55;color:#e7dfd2;margin:0">A pottery bowl — something finished and lasting to take with them, or to give to someone on the outside.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <sc-if value="{{ showScreeningNote }}" hint-placeholder-val="{{ true }}">
+  <div style="max-width:1200px;margin:0 auto;padding:60px 44px 10px">
+    <div style="background:#EFE7D6;border:1px solid rgba(38,34,29,.1);border-radius:16px;padding:36px 40px;display:grid;grid-template-columns:auto 1fr auto;gap:26px;align-items:center">
+      <div style="width:54px;height:54px;border-radius:50%;background:#6E7D5B;color:#fff;display:flex;align-items:center;justify-content:center;font-size:26px">✓</div>
+      <div>
+        <h3 style="font-family:'Spectral',serif;font-weight:600;font-size:22px;margin:0 0 8px">Facility-safe by design</h3>
+        <p style="font-size:15px;line-height:1.6;color:#524b42;margin:0">Every item is screened against a strict baseline; no alcohol, no nuts or poppy seeds, nothing sharp, no aerosols, and then against your centre’s own prohibited-items list before the first order.</p>
+      </div>
+      <a href="Klaire%20Packs%20Screening%20Rules.dc.html" style="color:#556046;font-weight:600;font-size:15px;border-bottom:1.5px solid #6E7D5B;padding-bottom:2px;white-space:nowrap">Read our screening rules →</a>
+    </div>
+  </div>
+  </sc-if>
+
+  <div style="max-width:1200px;margin:0 auto;padding:56px 44px 76px;text-align:center">
+    <h2 style="font-family:'Spectral',serif;font-weight:500;font-size:36px;letter-spacing:-.02em;margin:0 0 14px">Put these in someone’s hands</h2>
+    <p style="font-size:16.5px;line-height:1.6;color:#524b42;margin:0 auto 26px;max-width:560px">Registered centres receive all three free. <br>Supporters can sponsor a single pack, or the full journey for one person.</p>
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+      <a href="Klaire%20Packs%20Sponsor.dc.html" style="background:#B85C38;color:#fff;padding:16px 30px;border-radius:100px;font-weight:700;font-size:15.5px">Sponsor a pack</a>
+      <a href="Klaire%20Packs%20For%20Centres.dc.html#request" style="border:1.5px solid #26221D;color:#26221D;padding:15px 30px;border-radius:100px;font-weight:600;font-size:15.5px">Register your centre</a>
+    </div>
+  </div>
+  <div style="background:#26221D;color:#b8afa2;padding:52px 44px 44px">
+    <div style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:36px;font-size:13.5px">
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:center;gap:10px;color:#F5EFE3;font-family:'Spectral',serif;font-size:19px;font-weight:600"><span style="width:24px;height:24px;border-radius:50%;background:#B85C38"></span>Klaire Packs</div>
+        <div style="font-family:'Spectral',serif;font-style:italic;font-size:17px;color:#D89468">In honour of Klaire.</div>
+        <div style="line-height:1.7">Australian not-for-profit association<br>ABN 28 968 180 521<br><a href="mailto:hello@klairepacks.org" style="color:#b8afa2">hello@klairepacks.org</a></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="color:#F5EFE3;font-weight:600;margin-bottom:2px">Support</div>
+        <a class="nav" href="Klaire%20Packs%20Donate.dc.html" style="color:#b8afa2">Donate</a>
+        <a class="nav" href="Klaire%20Packs%20Sponsor.dc.html" style="color:#b8afa2">Sponsor a pack</a>
+        <a class="nav" href="Klaire%20Packs%20Transparency.dc.html" style="color:#b8afa2">Transparency</a>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="color:#F5EFE3;font-weight:600;margin-bottom:2px">The work</div>
+        <a class="nav" href="Klaire%20Packs%20Packs.dc.html" style="color:#b8afa2">The packs</a>
+        <a class="nav" href="Klaire%20Packs%20For%20Centres.dc.html" style="color:#b8afa2">For centres</a>
+        <a class="nav" href="Klaire%20Packs%20Screening%20Rules.dc.html" style="color:#b8afa2">Screening rules</a>
+        <a class="nav" href="Klaire%20Packs%20Impact.dc.html" style="color:#b8afa2">Impact</a>
+      </div>
+    </div>
+    <div style="max-width:1200px;margin:30px auto 0;padding-top:20px;border-top:1px solid rgba(245,239,227,.12);font-size:12.5px;line-height:1.7">Klaire Packs is a not-for-profit association and is not a registered charity, gifts are not tax-deductible. Payments are handled by Zeffy; no card details are stored on this site.</div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showFramework&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;},&quot;showProcess&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;},&quot;showScreeningNote&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      showFramework: this.props.showFramework ?? true,
+      showProcess: this.props.showProcess ?? true,
+      showScreeningNote: this.props.showScreeningNote ?? true
+    };
+  }
+}
+</script>
+</body>
+</html>
