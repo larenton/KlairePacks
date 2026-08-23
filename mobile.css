@@ -1,0 +1,68 @@
+/* Klaire Packs — mobile responsive layer.
+   Desktop layout lives in inline styles; these rules only take effect on small screens. */
+
+@media (min-width: 761px) {
+  .nav-cb, .nav-burger { display: none !important; }
+  .embed-mobile { display: none !important; }
+  .m-sticky-cta { display: none !important; }
+}
+
+@media (max-width: 760px) {
+  /* Tighten side padding on centred wrappers */
+  [style*="margin:0 auto"] { padding-left: 20px !important; padding-right: 20px !important; }
+
+  /* Stack every multi-column grid */
+  .m-stack { grid-template-columns: 1fr !important; gap: 18px !important; }
+
+  /* Hide non-critical panels on mobile */
+  .m-hide { display: none !important; }
+
+  /* Headings scale down */
+  h1[style] { font-size: 34px !important; line-height: 1.08 !important; }
+  [style*="font-size:40px"] { font-size: 27px !important; }
+  [style*="font-size:36px"] { font-size: 26px !important; }
+  [style*="font-size:34px"] { font-size: 25px !important; }
+  [style*="font-size:32px"] { font-size: 24px !important; }
+
+  /* Imagery scales down */
+  [style*="height:440px"] { height: 230px !important; }
+  [style*="height:180px"] { height: 130px !important; }
+  [style*="height:170px"] { height: 130px !important; }
+
+  /* Hamburger navigation */
+  .nav-cb { display: none; }
+  .nav-burger {
+    display: flex !important; align-items: center; justify-content: center;
+    width: 42px; height: 42px; font-size: 20px; color: #26221D; cursor: pointer;
+    border-radius: 9px; border: 1px solid rgba(38,34,29,.16); background: #FBF8F1;
+  }
+  .nav-links { display: none !important; }
+  .nav-cb:checked ~ .nav-links {
+    display: flex !important; flex-direction: column; align-items: stretch !important;
+    gap: 2px !important; position: absolute; top: 66px; right: 12px; left: 12px;
+    background: #F5EFE3; border: 1px solid rgba(38,34,29,.14); border-radius: 14px;
+    padding: 10px; box-shadow: 0 14px 34px rgba(38,34,29,.16); z-index: 60;
+  }
+  .nav-cb:checked ~ .nav-links > a { padding: 13px 14px !important; border-radius: 9px; }
+  .nav-cb:checked ~ .nav-links > a[style*="background:#B85C38"],
+  .nav-cb:checked ~ .nav-links > a[style*="background:#8f4526"] { text-align: center; margin-top: 4px; }
+
+  /* Collapsed embeds: hide the iframe, show an open-in-Zeffy button */
+  .embed-desktop { display: none !important; }
+  .embed-mobile {
+    display: flex !important; flex-direction: column; align-items: center; gap: 12px;
+    text-align: center; padding: 30px 22px;
+  }
+
+  /* Homepage sticky sponsor / donate bar */
+  body.home { padding-bottom: 76px; }
+  .m-sticky-cta {
+    display: flex !important; gap: 10px; position: fixed; left: 0; right: 0; bottom: 0;
+    z-index: 80; padding: 12px 14px; background: rgba(245,239,227,.96);
+    backdrop-filter: blur(10px); border-top: 1px solid rgba(38,34,29,.12);
+  }
+  .m-sticky-cta > a {
+    flex: 1; text-align: center; padding: 14px 10px; border-radius: 100px;
+    font-weight: 700; font-size: 15px;
+  }
+}

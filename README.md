@@ -17,9 +17,11 @@ Static site. No build step — open `index.html` or serve the folder.
 | transparency.html | Transparency |
 | thank-you.html | Thank you |
 
+Every page is plain, self-contained HTML — no runtime, no build step. Edit any file directly and refresh. All pages are mobile responsive (hamburger nav, stacked layout, collapsed embeds) via the shared `mobile.css`.
+
 ## Other files
 
-- `support.js` — runtime the pages load; must sit next to the HTML files.
+- `mobile.css` — responsive rules shared by every page. Must sit next to the HTML files.
 - `img/` — pack photography and favicon.
 
 ## Deploying to GitHub Pages
