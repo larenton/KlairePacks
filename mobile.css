@@ -54,8 +54,31 @@
     text-align: center; padding: 30px 22px;
   }
 
-  /* Homepage sticky sponsor / donate bar */
-  body.home { padding-bottom: 76px; }
+  /* Sticky media columns overlap the stacked content on mobile — let them flow */
+  .pack-media { position: static !important; top: auto !important; }
+
+  /* Donate: keep the "Open the donation form" button pinned and always tappable */
+  body.donate { padding-bottom: 104px; }
+  body.donate .embed-mobile {
+    position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 80;
+    padding: 15px 20px; gap: 3px;
+    box-shadow: 0 12px 30px rgba(38,34,29,.24);
+  }
+
+  /* Packs: the per-panel "Sponsor a pack" buttons are replaced by the sticky bar */
+  .pack-cta { display: none !important; }
+
+  /* Sponsor: surface the Zeffy shop above the descriptive pack panels */
+  .sp-flow { display: flex; flex-direction: column; }
+  .sp-flow > .sp-top    { order: 0; }
+  .sp-flow > .sp-zeffy  { order: 1; }
+  .sp-flow > .sp-stages { order: 2; }
+  .sp-flow > .sp-tiers  { order: 3; }
+  .sp-flow > .sp-prefer { order: 4; }
+  .sp-flow > .sp-footer { order: 5; }
+
+  /* Homepage / packs sticky sponsor / donate bar */
+  body.home, body.mcta { padding-bottom: 76px; }
   .m-sticky-cta {
     display: flex !important; gap: 10px; position: fixed; left: 0; right: 0; bottom: 0;
     z-index: 80; padding: 12px 14px; background: rgba(245,239,227,.96);
