@@ -38,7 +38,7 @@
       <a class="nav" href="for-centres.html" style="color:#B85C38;font-weight:600">For centres</a>
       <a class="nav" href="impact.html">Impact</a>
       <a class="nav" href="donate.html">Donate</a>
-      <a href="sponsor.html" style="background:#B85C38;color:#fff;padding:10px 18px;border-radius:100px;font-weight:600">Sponsor a pack</a>
+      <a href="sponsor.html" style="background:#B85C38;color:#fff;padding:10px 18px;border-radius:100px;font-weight:600">Sponsor a journey</a>
     </div>
   </div>
 
@@ -71,7 +71,7 @@
         <p style="font-size:16px;line-height:1.6;color:#524b42;margin:0 0 22px">Tell us about your centre and which packs you’re interested in. We’ll be in touch to set everything up with you.</p>
         <div style="background:#fff;border:1px solid rgba(38,34,29,.1);border-radius:14px;padding:24px;font-size:14px;line-height:1.6;color:#524b42">
           <div style="font-family:'Spectral',serif;font-size:16px;font-weight:600;color:#26221D;margin-bottom:6px">Prefer to talk first?</div>
-          Email <a href="mailto:hello@klairepacks.org" style="font-weight:600">luke@klairepacks.org</a> and we’ll arrange a call.
+          Email <a href="mailto:luke@klairepacks.org" style="font-weight:600">luke@klairepacks.org</a> and we’ll arrange a call.
         </div>
       </div>
       <div id="centre-thanks" style="display:none">
@@ -83,27 +83,33 @@
         </div>
       </div>
       
-        <form id="centre-form" onsubmit="return handleCentreSubmit(event)" style="background:#fff;border-radius:16px;padding:34px;border:1px solid rgba(38,34,29,.1);display:flex;flex-direction:column;gap:16px">
+        <!-- Posts directly to the Klaire Packs Zoho form. The name="" attributes must match
+             Zoho's field names exactly, or values arrive empty. After Zoho records the entry
+             it redirects back here with ?submitted=1, which reveals the thank-you panel above. -->
+        <form id="centre-form" action="https://forms.zohopublic.com.au/klairepacks1/form/Registeryourcentre/formperma/3yBLF0OZoyhGs4Wx9_NHubB9fsseVzqQhK3gG1gad78/htmlRecords/submit" method="POST" accept-charset="UTF-8" enctype="multipart/form-data" style="background:#fff;border-radius:16px;padding:34px;border:1px solid rgba(38,34,29,.1);display:flex;flex-direction:column;gap:16px">
+          <input type="hidden" name="zf_referrer_name" value="">
+          <input type="hidden" name="zf_redirect_url" value="https://klairepacks.org/for-centres.html?submitted=1#request">
+          <input type="hidden" name="zc_gad" value="">
           <div class="m-stack" style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
             <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600;color:#4a443c">Centre name
-              <input required="" placeholder="e.g. Riverside Recovery" style="padding:12px 14px;border:1px solid rgba(38,34,29,.18);border-radius:9px;font-size:14.5px;font-family:inherit;font-weight:400;background:#FBF8F1"></label>
+              <input name="SingleLine" required maxlength="255" placeholder="e.g. Riverside Recovery" style="padding:12px 14px;border:1px solid rgba(38,34,29,.18);border-radius:9px;font-size:14.5px;font-family:inherit;font-weight:400;background:#FBF8F1"></label>
             <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600;color:#4a443c">ABN
-              <input required="" placeholder="11 digit ABN" style="padding:12px 14px;border:1px solid rgba(38,34,29,.18);border-radius:9px;font-size:14.5px;font-family:inherit;font-weight:400;background:#FBF8F1"></label>
+              <input name="SingleLine1" required maxlength="255" placeholder="11 digit ABN" style="padding:12px 14px;border:1px solid rgba(38,34,29,.18);border-radius:9px;font-size:14.5px;font-family:inherit;font-weight:400;background:#FBF8F1"></label>
           </div>
           <div class="m-stack" style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
-            <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600;color:#4a443c">Your name
-              <input required="" placeholder="Full name" style="padding:12px 14px;border:1px solid rgba(38,34,29,.18);border-radius:9px;font-size:14.5px;font-family:inherit;font-weight:400;background:#FBF8F1"></label>
-            <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600;color:#4a443c">Your role
-              <input placeholder="e.g. Intake coordinator" style="padding:12px 14px;border:1px solid rgba(38,34,29,.18);border-radius:9px;font-size:14.5px;font-family:inherit;font-weight:400;background:#FBF8F1"></label>
+            <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600;color:#4a443c">First name
+              <input name="Name_First" required maxlength="255" placeholder="First name" style="padding:12px 14px;border:1px solid rgba(38,34,29,.18);border-radius:9px;font-size:14.5px;font-family:inherit;font-weight:400;background:#FBF8F1"></label>
+            <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600;color:#4a443c">Last name
+              <input name="Name_Last" maxlength="255" placeholder="Last name" style="padding:12px 14px;border:1px solid rgba(38,34,29,.18);border-radius:9px;font-size:14.5px;font-family:inherit;font-weight:400;background:#FBF8F1"></label>
           </div>
           <div class="m-stack" style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
             <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600;color:#4a443c">Work email
-              <input required="" type="email" placeholder="you@centre.org" style="padding:12px 14px;border:1px solid rgba(38,34,29,.18);border-radius:9px;font-size:14.5px;font-family:inherit;font-weight:400;background:#FBF8F1"></label>
+              <input name="Email" required type="email" maxlength="255" placeholder="you@centre.org" style="padding:12px 14px;border:1px solid rgba(38,34,29,.18);border-radius:9px;font-size:14.5px;font-family:inherit;font-weight:400;background:#FBF8F1"></label>
             <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600;color:#4a443c">Clients in care at any one time
-              <input placeholder="Approximate number of beds / places" style="padding:12px 14px;border:1px solid rgba(38,34,29,.18);border-radius:9px;font-size:14.5px;font-family:inherit;font-weight:400;background:#FBF8F1"></label>
+              <input name="SingleLine2" maxlength="255" placeholder="Approximate number of beds / places" style="padding:12px 14px;border:1px solid rgba(38,34,29,.18);border-radius:9px;font-size:14.5px;font-family:inherit;font-weight:400;background:#FBF8F1"></label>
           </div>
           <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600;color:#4a443c">Anything you’d like us to know? <span style="font-weight:400;color:#9a9186">(optional)</span>
-            <textarea rows="3" placeholder="Timing, your prohibited-items list, anything else…" style="padding:12px 14px;border:1px solid rgba(38,34,29,.18);border-radius:9px;font-size:14.5px;font-family:inherit;font-weight:400;background:#FBF8F1;resize:vertical"></textarea></label>
+            <textarea name="MultiLine" rows="3" maxlength="65535" placeholder="Timing, your prohibited-items list, anything else…" style="padding:12px 14px;border:1px solid rgba(38,34,29,.18);border-radius:9px;font-size:14.5px;font-family:inherit;font-weight:400;background:#FBF8F1;resize:vertical"></textarea></label>
           <button type="submit" style="margin-top:2px;background:#B85C38;color:#fff;border:none;padding:16px;border-radius:100px;font-weight:700;font-size:15.5px;font-family:inherit;cursor:pointer">Register my centre</button>
           <p style="font-size:12px;color:#9a9186;margin:0;text-align:center">We’ll only use your details to set up your account. No mailing lists.</p>
         </form>
@@ -146,12 +152,12 @@
       <div style="display:flex;flex-direction:column;gap:12px">
         <div style="display:flex;align-items:center;gap:10px;color:#F5EFE3;font-family:'Spectral',serif;font-size:19px;font-weight:600"><span style="width:24px;height:24px;border-radius:50%;background:#B85C38"></span>Klaire Packs</div>
         <div style="font-family:'Spectral',serif;font-style:italic;font-size:17px;color:#D89468">In honour of Klaire.</div>
-        <div style="line-height:1.7">Australian not-for-profit association<br>ABN 28 968 180 521<br><a href="mailto:hello@klairepacks.org" style="color:#b8afa2">hello@klairepacks.org</a></div>
+        <div style="line-height:1.7">Australian not-for-profit association<br>ABN 28 968 180 521<br><a href="mailto:luke@klairepacks.org" style="color:#b8afa2">luke@klairepacks.org</a></div>
       </div>
       <div class="m-hide" style="display:flex;flex-direction:column;gap:10px">
         <div style="color:#F5EFE3;font-weight:600;margin-bottom:2px">Support</div>
         <a class="nav" href="donate.html" style="color:#b8afa2">Donate</a>
-        <a class="nav" href="sponsor.html" style="color:#b8afa2">Sponsor a pack</a>
+        <a class="nav" href="sponsor.html" style="color:#b8afa2">Sponsor a journey</a>
         <a class="nav" href="transparency.html" style="color:#b8afa2">Transparency</a>
       </div>
       <div class="m-hide" style="display:flex;flex-direction:column;gap:10px">
@@ -166,12 +172,18 @@
   </div>
 </div>
 <script>
-function handleCentreSubmit(e){
-  e.preventDefault();
-  document.getElementById('centre-form').style.display='none';
-  document.getElementById('centre-thanks').style.display='block';
-  return false;
-}
+// Zoho redirects back to ?submitted=1 after recording the registration.
+// Swap the form for the thank-you panel and scroll it into view.
+(function(){
+  try{
+    if(new URLSearchParams(window.location.search).get('submitted')==='1'){
+      var form=document.getElementById('centre-form');
+      var thanks=document.getElementById('centre-thanks');
+      if(form) form.style.display='none';
+      if(thanks) thanks.style.display='block';
+    }
+  }catch(e){}
+})();
 </script>
 </body>
 </html>
