@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Impact — Klaire Packs</title>
-<meta name="description" content="Why Klaire Packs exists, who it reaches, and what has gone out so far.">
+<meta name="description" content="Our goal: a Klaire Pack waiting at every women’s and children’s recovery centre in Sydney by the end of 2027.">
 <meta property="og:title" content="Impact — Klaire Packs">
-<meta property="og:description" content="Why Klaire Packs exists, who it reaches, and what has gone out so far.">
+<meta property="og:description" content="Our goal: a Klaire Pack waiting at every women’s and children’s recovery centre in Sydney by the end of 2027.">
 <meta property="og:type" content="website">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="mobile.css">
@@ -21,7 +21,54 @@
   a.nav{color:#4a443c}
   a.nav:hover{color:#B85C38}
   section[id],div[id]{scroll-margin-top:82px}
-  input:focus,textarea:focus{outline:none;border-color:#B85C38}
+
+  /* Visible keyboard focus, on cream and on the dark bands */
+  a:focus-visible,label:focus-visible,input:focus-visible{outline:2.5px solid #8f4526;outline-offset:3px;border-radius:4px}
+  .imp-dark a:focus-visible{outline-color:#F5EFE3}
+
+  /* Ripple meter — five centre markers in a row */
+  .imp-meter{display:flex;justify-content:center;align-items:center;gap:18px;flex-wrap:wrap;margin:0 auto}
+  .imp-marker{display:block;width:92px;height:92px;flex:0 0 auto}
+
+  /* The one load animation: reached rings expand once. */
+  @media (prefers-reduced-motion: no-preference){
+    .imp-marker .imp-ripple{transform-origin:38px 38px;animation:imp-expand .9s cubic-bezier(.2,.7,.3,1) both}
+    .imp-marker .imp-ripple-2{animation-delay:.12s}
+    @keyframes imp-expand{from{transform:scale(.4);opacity:0}to{transform:scale(1)}}
+  }
+
+  /* Stat strip — hairline dividers, no boxes */
+  .imp-strip > div + div{border-left:1px solid rgba(38,34,29,.12)}
+
+  /* Journey — three stages threaded on one hairline */
+  .imp-journey{position:relative}
+  .imp-journey::before{content:"";position:absolute;left:8.5px;right:calc((100% - 68px)/3 - 8.5px);top:8px;height:1px;background:rgba(38,34,29,.18)}
+  .imp-node{width:17px;height:17px;border-radius:50%;background:currentColor;box-shadow:0 0 0 6px #F5EFE3;position:relative;z-index:1}
+
+  /* Gift ladder — each rung sits a step higher and a step in */
+  .imp-rung{display:flex;align-items:baseline;gap:20px;background:#fff;border:1px solid rgba(38,34,29,.09);border-radius:16px;padding:26px 30px}
+  .imp-ladder > div:nth-child(1) .imp-rung{margin-right:18%}
+  .imp-ladder > div:nth-child(2) .imp-rung{margin-left:6%;margin-right:12%}
+  .imp-ladder > div:nth-child(3) .imp-rung{margin-left:12%;margin-right:6%}
+  .imp-ladder > div:nth-child(4) .imp-rung{margin-left:18%}
+
+  @media (max-width:760px){
+    /* Meter scales down and wraps rather than shrinking off the edge */
+    .imp-marker{width:58px;height:58px}
+    .imp-meter{gap:8px}
+    /* Stat strip stacks: dividers turn horizontal */
+    .imp-strip{grid-template-columns:1fr !important}
+    .imp-strip > div + div{border-left:0;border-top:1px solid rgba(38,34,29,.12)}
+    /* Journey stacks: the hairline runs down the left, through the nodes */
+    .imp-journey::before{left:8px;right:auto;top:9px;bottom:9px;width:1px;height:auto}
+    .imp-journey > div{position:relative;padding-left:34px}
+    .imp-journey .imp-node{position:absolute;left:0;top:0}
+    .imp-journey .imp-eyebrow{margin-top:0}
+    /* the hairline stops at the last node rather than running on */
+    .imp-journey > div:last-child::after{content:"";position:absolute;left:8px;top:17px;bottom:-2px;width:1px;background:#F5EFE3}
+    /* Ladder squares up */
+    .imp-ladder > div .imp-rung{margin-left:0 !important;margin-right:0 !important;padding:22px;gap:12px;flex-direction:column;align-items:flex-start}
+  }
 </style>
 </head>
 <body>
@@ -42,25 +89,85 @@
     </div>
   </div>
 
-  <div style="max-width:840px;margin:0 auto;padding:72px 44px 24px;text-align:center">
-    <div style="display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#B85C38;margin-bottom:20px"><span style="width:22px;height:1.5px;background:#B85C38"></span>Impact</div>
-    <h1 style="font-family:'Spectral',serif;font-weight:500;font-size:52px;line-height:1.05;letter-spacing:-.02em;margin:0 0 20px;text-wrap:pretty">A small thing that lands in a big moment.</h1>
-    <p style="font-size:18px;line-height:1.6;color:#524b42;margin:0;text-wrap:pretty">Recovery is hard, human work. A well-timed pack won’t do that work, but it can say, clearly, that someone is thought of. Here’s what that looks like.</p>
-  </div>
+  <!-- 1 — HERO -->
+  <div style="max-width:880px;margin:0 auto;padding:72px 44px 20px;text-align:center">
+    <div style="display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#8f4526;margin-bottom:20px"><span style="width:22px;height:1.5px;background:#8f4526"></span>Our goal · by the end of 2027</div>
+    <h1 style="font-family:'Spectral',serif;font-weight:500;font-size:52px;line-height:1.05;letter-spacing:-.02em;margin:0 0 20px;text-wrap:pretty">A Klaire Pack waiting at every women’s and children’s recovery centre in Sydney.</h1>
+    <p style="font-size:18px;line-height:1.6;color:#524b42;margin:0 auto;max-width:640px;text-wrap:pretty">Recovery is hard, human work. A pack won’t do that work — but it can say, clearly, that someone is thought of. We want one at every centre, for every woman arriving, staying, and leaving.</p>
 
-  <div style="max-width:1200px;margin:0 auto;padding:44px 44px 20px">
-    <div class="m-stack m-hide" style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px">
-      <div style="background:#fff;border:1px solid rgba(38,34,29,.09);border-radius:16px;padding:34px;text-align:center"><div style="font-family:'Spectral',serif;font-size:52px;font-weight:500;color:#B85C38;line-height:1;margin-bottom:8px">3</div><div style="font-size:14.5px;color:#524b42;line-height:1.5">packs, each tailored to a distinct stage of the recovery journey</div></div>
-      <div style="background:#fff;border:1px solid rgba(38,34,29,.09);border-radius:16px;padding:34px;text-align:center"><div style="font-family:'Spectral',serif;font-size:52px;font-weight:500;color:#6E7D5B;line-height:1;margin-bottom:8px">$0</div><div style="font-size:14.5px;color:#524b42;line-height:1.5">Free for registered centres</div></div>
-      <div style="background:#fff;border:1px solid rgba(38,34,29,.09);border-radius:16px;padding:34px;text-align:center"><div style="font-family:'Spectral',serif;font-size:52px;font-weight:500;color:#9c6a3f;line-height:1;margin-bottom:8px">1</div><div style="font-size:14.5px;color:#524b42;line-height:1.5">sister, whose memory is inside every single pack we send</div></div>
+    <!-- ===========================================================
+         RIPPLE METER — five centres.
+         To update: change a marker's comment-marked block from the
+         UNREACHED to the REACHED shape (copy the reached marker
+         above it), then update the aria-label on .imp-meter and the
+         caption line below it. Nothing else needs to change.
+         Currently: 1 of 5 reached.
+         =========================================================== -->
+    <div class="imp-meter" role="img" aria-label="Progress: one of five centres reached" style="margin-top:44px">
+
+      <!-- Centre 1 — REACHED -->
+      <svg class="imp-marker" viewBox="0 0 76 76" aria-hidden="true" focusable="false">
+        <circle class="imp-ripple imp-ripple-2" cx="38" cy="38" r="30" fill="none" stroke="#B85C38" stroke-width="1.5" opacity=".22"></circle>
+        <circle class="imp-ripple" cx="38" cy="38" r="19" fill="none" stroke="#B85C38" stroke-width="1.5" opacity=".5"></circle>
+        <circle cx="38" cy="38" r="8" fill="#B85C38"></circle>
+      </svg>
+
+      <!-- Centre 2 — UNREACHED -->
+      <svg class="imp-marker" viewBox="0 0 76 76" aria-hidden="true" focusable="false">
+        <circle cx="38" cy="38" r="19" fill="none" stroke="rgba(38,34,29,.28)" stroke-width="1"></circle>
+        <circle cx="38" cy="38" r="3" fill="rgba(38,34,29,.28)"></circle>
+      </svg>
+
+      <!-- Centre 3 — UNREACHED -->
+      <svg class="imp-marker" viewBox="0 0 76 76" aria-hidden="true" focusable="false">
+        <circle cx="38" cy="38" r="19" fill="none" stroke="rgba(38,34,29,.28)" stroke-width="1"></circle>
+        <circle cx="38" cy="38" r="3" fill="rgba(38,34,29,.28)"></circle>
+      </svg>
+
+      <!-- Centre 4 — UNREACHED -->
+      <svg class="imp-marker" viewBox="0 0 76 76" aria-hidden="true" focusable="false">
+        <circle cx="38" cy="38" r="19" fill="none" stroke="rgba(38,34,29,.28)" stroke-width="1"></circle>
+        <circle cx="38" cy="38" r="3" fill="rgba(38,34,29,.28)"></circle>
+      </svg>
+
+      <!-- Centre 5 — UNREACHED -->
+      <svg class="imp-marker" viewBox="0 0 76 76" aria-hidden="true" focusable="false">
+        <circle cx="38" cy="38" r="19" fill="none" stroke="rgba(38,34,29,.28)" stroke-width="1"></circle>
+        <circle cx="38" cy="38" r="3" fill="rgba(38,34,29,.28)"></circle>
+      </svg>
+
     </div>
-    <p class="m-hide" style="text-align:center;font-size:12.5px;color:#9a9186;margin:18px 0 0">Figures reflect the current free model. <a href="transparency.html">Funds raised and spent are published here</a>.</p>
+    <p style="font-size:14px;color:#524b42;margin:18px 0 0"><strong style="font-weight:600;color:#26221D">One</strong> of five centres reached</p>
+
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:32px">
+      <a href="donate.html" style="background:#8f4526;color:#fff;padding:15px 30px;border-radius:100px;font-weight:600;font-size:15.5px">Donate</a>
+      <a href="sponsor.html" style="border:1.5px solid #26221D;color:#26221D;padding:14px 30px;border-radius:100px;font-weight:600;font-size:15.5px">Sponsor a pack</a>
+    </div>
   </div>
 
+  <!-- 2 — STAT STRIP -->
+  <div style="max-width:1000px;margin:0 auto;padding:56px 44px 12px">
+    <div class="imp-strip" style="display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(38,34,29,.12);border-bottom:1px solid rgba(38,34,29,.12)">
+      <div style="padding:32px 24px;text-align:center">
+        <div style="font-family:'Spectral',serif;font-size:52px;font-weight:500;color:#B85C38;line-height:1;margin-bottom:10px">3</div>
+        <div style="font-size:14.5px;color:#524b42;line-height:1.5">packs, one for arrival, the middle, and leaving</div>
+      </div>
+      <div style="padding:32px 24px;text-align:center">
+        <div style="font-family:'Spectral',serif;font-size:52px;font-weight:500;color:#6E7D5B;line-height:1;margin-bottom:10px">$0</div>
+        <div style="font-size:14.5px;color:#524b42;line-height:1.5">always free to the centres we supply</div>
+      </div>
+      <div style="padding:32px 24px;text-align:center">
+        <div style="font-family:'Spectral',serif;font-size:52px;font-weight:500;color:#9c6a3f;line-height:1;margin-bottom:10px">$100</div>
+        <div style="font-size:14.5px;color:#524b42;line-height:1.5">sends one woman all three</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3 — THE SCALE OF THE NEED -->
   <div style="max-width:1200px;margin:0 auto;padding:56px 44px 20px">
     <div style="text-align:center;max-width:640px;margin:0 auto 40px">
       <h2 style="font-family:'Spectral',serif;font-weight:500;font-size:34px;letter-spacing:-.02em;margin:0 0 12px">The scale of the need</h2>
-      <p style="font-size:16.5px;line-height:1.6;color:#524b42;margin:0;text-wrap:pretty">Recovery in Australia is common, and it is long, hard work. The numbers show how many people are in it, and how much room there is for a small gesture at the right moment.</p>
+      <p style="font-size:16.5px;line-height:1.6;color:#524b42;margin:0;text-wrap:pretty">Recovery in Australia is common, and it is long work. The numbers show how many people are in it, and how much room there is for a small gesture at the right moment.</p>
     </div>
     <div class="m-stack" style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px">
       <div style="background:#fff;border:1px solid rgba(38,34,29,.09);border-radius:16px;padding:34px">
@@ -71,56 +178,116 @@
       <div style="background:#fff;border:1px solid rgba(38,34,29,.09);border-radius:16px;padding:34px">
         <div style="font-family:'Spectral',serif;font-size:46px;font-weight:500;color:#6E7D5B;line-height:1;margin-bottom:10px">≈ 4 weeks</div>
         <div style="font-size:15px;color:#26221D;font-weight:600;margin-bottom:6px">a typical stretch in treatment</div>
-        <div style="font-size:13.5px;color:#524b42;line-height:1.55">The median alcohol treatment episode runs about 27 days — long enough for a well-timed pack to land at arrival, the middle, or leaving.</div>
+        <div style="font-size:13.5px;color:#524b42;line-height:1.55">The median alcohol treatment episode runs about 27 days.</div>
       </div>
       <div style="background:#fff;border:1px solid rgba(38,34,29,.09);border-radius:16px;padding:34px">
         <div style="font-family:'Spectral',serif;font-size:46px;font-weight:500;color:#9c6a3f;line-height:1;margin-bottom:10px">3 in 5</div>
         <div style="font-size:15px;color:#26221D;font-weight:600;margin-bottom:6px">finish what they start</div>
-        <div style="font-size:13.5px;color:#524b42;line-height:1.55">Around 59% of treatment episodes end in a planned completion. Every point of encouragement along the way counts.</div>
+        <div style="font-size:13.5px;color:#524b42;line-height:1.55">Around 59% of episodes end in a planned completion.</div>
       </div>
     </div>
-    <p style="text-align:center;font-size:12.5px;color:#9a9186;margin:18px 0 0">Source: Australian Institute of Health and Welfare, <i>Alcohol and other drug treatment services in Australia 2023–24</i>.</p>
+    <p style="text-align:center;font-size:12.5px;color:#7a7268;margin:18px 0 0">Source: Australian Institute of Health and Welfare, <i>Alcohol and other drug treatment services in Australia 2023–24</i>.</p>
   </div>
 
-  <div class="m-hide" style="max-width:1200px;margin:0 auto;padding:44px 44px 20px">
-    <div style="text-align:center;max-width:640px;margin:0 auto 36px">
-      <h2 style="font-family:'Spectral',serif;font-weight:500;font-size:34px;letter-spacing:-.02em;margin:0 0 12px">What a pack can hold</h2>
-      <p style="font-size:16.5px;line-height:1.6;color:#524b42;margin:0;text-wrap:pretty">A pack won’t treat addiction. What it can do is meet a few of the smaller needs that sit alongside recovery — the ones that are easy to overlook when everything else is hard.</p>
-    </div>
-    <div class="m-stack" style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px">
-      <div style="background:#fff;border:1px solid rgba(38,34,29,.09);border-radius:16px;padding:32px">
-        <div style="font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#B85C38;margin-bottom:12px">Mental</div>
-        <p style="font-size:15px;line-height:1.6;color:#3a352e;margin:0">Being handed something chosen for you is a plain signal that you are thought of. A journal, prompt cards and a moment of calm give the mind small, steadying things to hold onto.</p>
-      </div>
-      <div style="background:#fff;border:1px solid rgba(38,34,29,.09);border-radius:16px;padding:32px">
-        <div style="font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#6E7D5B;margin-bottom:12px">Physical</div>
-        <p style="font-size:15px;line-height:1.6;color:#3a352e;margin:0">Warm socks, sunscreen, toiletries and a warm drink cover the basic comforts of the body — the ordinary things that make a hard day feel a little more manageable.</p>
-      </div>
-      <div style="background:#fff;border:1px solid rgba(38,34,29,.09);border-radius:16px;padding:32px">
-        <div style="font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#9c6a3f;margin-bottom:12px">Wellness</div>
-        <p style="font-size:15px;line-height:1.6;color:#3a352e;margin:0">Something to make with your hands, and something to keep or give away. A small craft or a finished object is a way to mark progress and carry a bit of it forward.</p>
-      </div>
-    </div>
-  </div>
-
-  <div style="background:#26221D;color:#F5EFE3;padding:70px 44px;margin-top:36px">
+  <!-- 4 — KLAIRE -->
+  <div class="imp-dark" style="background:#26221D;color:#F5EFE3;padding:70px 44px;margin-top:44px">
     <div style="max-width:780px;margin:0 auto;text-align:center">
-      <div style="font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#D89468;margin-bottom:22px">Where the impact begins</div>
-      <p style="font-family:'Spectral',serif;font-weight:400;font-size:26px;line-height:1.5;margin:0 0 20px;text-wrap:pretty">My sister Klaire, who we lost at 41. Every pack we send carries the small comforts I wished someone had handed her, and every centre that joins widens that circle of care.</p>
-      <p style="font-size:14.5px;color:#b8afa2;margin:0">Thank you for being part of it.</p>
+      <h2 style="font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#D89468;margin:0 0 22px">Why Klaire Packs exists</h2>
+      <p style="font-family:'Spectral',serif;font-weight:400;font-size:27px;line-height:1.5;margin:0 0 24px;text-wrap:pretty">Behind every one of those numbers is a person. Ours had a name.</p>
+      <p style="font-size:15.5px;line-height:1.7;color:#e7dfd2;margin:0 0 14px;text-wrap:pretty">Klaire fought her addiction with more courage than most people will ever know. We lost her at 41.</p>
+      <p style="font-size:15.5px;line-height:1.7;color:#e7dfd2;margin:0 0 14px;text-wrap:pretty">Every pack we send carries the small comforts I wished someone had handed her — and every centre that joins widens that circle of care.</p>
+      <p style="font-family:'Spectral',serif;font-style:italic;font-size:17px;color:#b8afa2;margin:0">Thank you for being part of it.</p>
     </div>
   </div>
 
-  <div style="max-width:1200px;margin:0 auto;padding:64px 44px 76px;text-align:center">
-    <h2 style="font-family:'Spectral',serif;font-weight:500;font-size:36px;letter-spacing:-.02em;margin:0 0 14px">Keep the packs going</h2>
-    <p style="font-size:16.5px;line-height:1.6;color:#524b42;margin:0 auto 12px;max-width:560px">$99 sponsors a whole journey for one person. A monthly donation helps us continue to supply packs to centres.</p>
-    <p style="font-size:14px;line-height:1.6;color:#7a7268;margin:0 auto 26px;max-width:560px">We’re a small not-for-profit, not a registered charity, so gifts aren’t tax-deductible — but every dollar goes straight into packs.</p>
-    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
-      <a href="donate.html" style="background:#B85C38;color:#fff;padding:16px 30px;border-radius:100px;font-weight:700;font-size:15.5px">Donate</a>
-      <a href="sponsor.html" style="border:1.5px solid #26221D;color:#26221D;padding:15px 30px;border-radius:100px;font-weight:600;font-size:15.5px">Sponsor a journey</a>
+  <!-- 5 — THE JOURNEY -->
+  <div style="max-width:1200px;margin:0 auto;padding:70px 44px 20px">
+    <div style="text-align:center;max-width:640px;margin:0 auto 44px">
+      <h2 style="font-family:'Spectral',serif;font-weight:500;font-size:34px;letter-spacing:-.02em;margin:0 0 12px">Three packs, three moments</h2>
+      <p style="font-size:16.5px;line-height:1.6;color:#524b42;margin:0;text-wrap:pretty">Recovery isn’t one moment, so a pack shouldn’t be one thing. Each one is made for a different stretch of the same journey.</p>
+    </div>
+    <div class="imp-journey m-stack" style="display:grid;grid-template-columns:repeat(3,1fr);gap:34px">
+      <div>
+        <div class="imp-node" style="color:#B85C38"></div>
+        <div class="imp-eyebrow" style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#8f4526;margin:22px 0 8px">Welcome · on arrival</div>
+        <h3 style="font-family:'Spectral',serif;font-weight:600;font-size:23px;margin:0 0 10px">A new foundation, built with care.</h3>
+        <p style="font-size:15px;line-height:1.6;color:#524b42;margin:0 0 14px">Sunscreen, warm socks, an eye mask, a stone to hold — the plain comforts of the first hard days.</p>
+        <a class="nav" href="packs.html#welcome" style="font-size:13.5px">See what’s inside</a>
+      </div>
+      <div>
+        <div class="imp-node" style="color:#6E7D5B"></div>
+        <div class="imp-eyebrow" style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#5b6a4a;margin:22px 0 8px">Steady · mid-journey</div>
+        <h3 style="font-family:'Spectral',serif;font-weight:600;font-size:23px;margin:0 0 10px">Rest is doing something.</h3>
+        <p style="font-size:15px;line-height:1.6;color:#524b42;margin:0 0 14px">A journal and pen, tea and chocolate, prompt cards — small, steadying things for the middle.</p>
+        <a class="nav" href="packs.html#steady" style="font-size:13.5px">See what’s inside</a>
+      </div>
+      <div>
+        <div class="imp-node" style="color:#9c6a3f"></div>
+        <div class="imp-eyebrow" style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#835733;margin:22px 0 8px">Onward · on leaving</div>
+        <h3 style="font-family:'Spectral',serif;font-weight:600;font-size:23px;margin:0 0 10px">Stepping into tomorrow.</h3>
+        <p style="font-size:15px;line-height:1.6;color:#524b42;margin:0 0 14px">A beanie, a bowl to keep, a resources card — something made, and something to carry forward.</p>
+        <a class="nav" href="packs.html#onward" style="font-size:13.5px">See what’s inside</a>
+      </div>
     </div>
   </div>
-  <div style="background:#26221D;color:#b8afa2;padding:52px 44px 44px">
+
+  <!-- 6 — WHAT YOUR GIFT DOES -->
+  <div style="max-width:1000px;margin:0 auto;padding:70px 44px 76px">
+    <div style="text-align:center;max-width:620px;margin:0 auto 40px">
+      <h2 style="font-family:'Spectral',serif;font-weight:500;font-size:34px;letter-spacing:-.02em;margin:0 0 12px">What your gift does</h2>
+      <p style="font-size:16.5px;line-height:1.6;color:#524b42;margin:0;text-wrap:pretty">Each step up is a wider circle — one moment, one journey, one centre, then the whole of Sydney.</p>
+    </div>
+
+    <div class="imp-ladder" style="display:flex;flex-direction:column;gap:16px">
+      <div>
+        <div class="imp-rung">
+          <div style="font-family:'Spectral',serif;font-size:32px;font-weight:600;color:#B85C38;line-height:1;flex:0 0 auto;min-width:150px">$35</div>
+          <div>
+            <h3 style="font-size:15.5px;font-weight:600;margin:0 0 5px">assembles one pack</h3>
+            <p style="font-size:14.5px;line-height:1.55;color:#524b42;margin:0">A single well-timed moment for one woman.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="imp-rung">
+          <div style="font-family:'Spectral',serif;font-size:32px;font-weight:600;color:#B85C38;line-height:1;flex:0 0 auto;min-width:150px">$100</div>
+          <div>
+            <h3 style="font-size:15.5px;font-weight:600;margin:0 0 5px">sends the full journey</h3>
+            <p style="font-size:14.5px;line-height:1.55;color:#524b42;margin:0">All three packs, from arrival to leaving.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="imp-rung">
+          <div style="font-family:'Spectral',serif;font-size:32px;font-weight:600;color:#B85C38;line-height:1;flex:0 0 auto;min-width:150px">$5,000 <span style="font-family:'Public Sans',system-ui,sans-serif;font-size:14px;font-weight:500;color:#7a7268">a year</span></div>
+          <div>
+            <h3 style="font-size:15.5px;font-weight:600;margin:0 0 5px">keeps packs flowing to one centre</h3>
+            <p style="font-size:14.5px;line-height:1.55;color:#524b42;margin:0">For everyone who comes through.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="imp-rung" style="background:#26221D;border-color:#26221D;color:#F5EFE3">
+          <div style="font-family:'Spectral',serif;font-size:32px;font-weight:600;color:#D89468;line-height:1;flex:0 0 auto;min-width:150px">×5 <span style="font-family:'Public Sans',system-ui,sans-serif;font-size:14px;font-weight:500;color:#b8afa2">centres</span></div>
+          <div>
+            <h3 style="font-size:15.5px;font-weight:600;margin:0 0 5px">the whole of Sydney</h3>
+            <p style="font-size:14.5px;line-height:1.55;color:#e7dfd2;margin:0">Every women’s and children’s recovery centre, supplied.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p style="text-align:center;font-size:16px;line-height:1.6;color:#524b42;margin:40px auto 0;max-width:600px;text-wrap:pretty">Our 2027 target is about $27,000 a year — five centres, fully supplied. We publish every dollar raised and spent on our <a href="transparency.html">transparency page</a>.</p>
+
+    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:30px">
+      <a href="donate.html" style="background:#8f4526;color:#fff;padding:15px 30px;border-radius:100px;font-weight:600;font-size:15.5px">Donate</a>
+      <a href="sponsor.html" style="border:1.5px solid #26221D;color:#26221D;padding:14px 30px;border-radius:100px;font-weight:600;font-size:15.5px">Sponsor a pack</a>
+    </div>
+
+    <p style="text-align:center;font-size:14px;line-height:1.6;color:#7a7268;margin:22px auto 0;max-width:560px">We’re a small not-for-profit, not a registered charity, so gifts aren’t tax-deductible — but every dollar goes straight into packs.</p>
+  </div>
+
+  <div class="imp-dark" style="background:#26221D;color:#b8afa2;padding:52px 44px 44px">
     <div class="m-stack" style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:36px;font-size:13.5px">
       <div style="display:flex;flex-direction:column;gap:12px">
         <div style="display:flex;align-items:center;gap:10px;color:#F5EFE3;font-family:'Spectral',serif;font-size:19px;font-weight:600"><span style="width:24px;height:24px;border-radius:50%;background:#B85C38"></span>Klaire Packs</div>
