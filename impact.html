@@ -45,12 +45,8 @@
   .imp-journey::before{content:"";position:absolute;left:8.5px;right:calc((100% - 68px)/3 - 8.5px);top:8px;height:1px;background:rgba(38,34,29,.18)}
   .imp-node{width:17px;height:17px;border-radius:50%;background:currentColor;box-shadow:0 0 0 6px #F5EFE3;position:relative;z-index:1}
 
-  /* Gift ladder — each rung sits a step higher and a step in */
+  /* Gift ladder — rungs share one edge; the amounts carry the sequence */
   .imp-rung{display:flex;align-items:baseline;gap:20px;background:#fff;border:1px solid rgba(38,34,29,.09);border-radius:16px;padding:26px 30px}
-  .imp-ladder > div:nth-child(1) .imp-rung{margin-right:18%}
-  .imp-ladder > div:nth-child(2) .imp-rung{margin-left:6%;margin-right:12%}
-  .imp-ladder > div:nth-child(3) .imp-rung{margin-left:12%;margin-right:6%}
-  .imp-ladder > div:nth-child(4) .imp-rung{margin-left:18%}
 
   @media (max-width:760px){
     /* Meter scales down and wraps rather than shrinking off the edge */
@@ -67,7 +63,7 @@
     /* the hairline stops at the last node rather than running on */
     .imp-journey > div:last-child::after{content:"";position:absolute;left:8px;top:17px;bottom:-2px;width:1px;background:#F5EFE3}
     /* Ladder squares up */
-    .imp-ladder > div .imp-rung{margin-left:0 !important;margin-right:0 !important;padding:22px;gap:12px;flex-direction:column;align-items:flex-start}
+    .imp-ladder > div .imp-rung{padding:22px;gap:12px;flex-direction:column;align-items:flex-start}
   }
 </style>
 </head>
@@ -154,7 +150,7 @@
       </div>
       <div style="padding:32px 24px;text-align:center">
         <div style="font-family:'Spectral',serif;font-size:52px;font-weight:500;color:#6E7D5B;line-height:1;margin-bottom:10px">$0</div>
-        <div style="font-size:14.5px;color:#524b42;line-height:1.5">always free to the centres we supply</div>
+        <div style="font-size:14.5px;color:#524b42;line-height:1.5">free to registered centres we supply</div>
       </div>
       <div style="padding:32px 24px;text-align:center">
         <div style="font-family:'Spectral',serif;font-size:52px;font-weight:500;color:#9c6a3f;line-height:1;margin-bottom:10px">$99</div>
@@ -194,8 +190,7 @@
     <div style="max-width:780px;margin:0 auto;text-align:center">
       <h2 style="font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#D89468;margin:0 0 22px">Why Klaire Packs exists</h2>
       <p style="font-family:'Spectral',serif;font-weight:400;font-size:27px;line-height:1.5;margin:0 0 24px;text-wrap:pretty">Behind every one of those numbers is a person. Ours had a name.</p>
-      <p style="font-size:15.5px;line-height:1.7;color:#e7dfd2;margin:0 0 14px;text-wrap:pretty">Klaire fought her addiction with more courage than most people will ever know. We lost her at 41.</p>
-      <p style="font-size:15.5px;line-height:1.7;color:#e7dfd2;margin:0 0 14px;text-wrap:pretty">Every pack we send carries the small comforts I wished someone had handed her — and every centre that joins widens that circle of care.</p>
+      <p style="font-size:15.5px;line-height:1.7;color:#e7dfd2;margin:0 0 14px;text-wrap:pretty">Every pack we send carries the small comforts I wished someone had handed Klaire, and every centre that joins widens that circle of care.</p>
       <p style="font-family:'Spectral',serif;font-style:italic;font-size:17px;color:#b8afa2;margin:0">Thank you for being part of it.</p>
     </div>
   </div>
@@ -235,7 +230,7 @@
   <div style="max-width:1000px;margin:0 auto;padding:70px 44px 76px">
     <div style="text-align:center;max-width:620px;margin:0 auto 40px">
       <h2 style="font-family:'Spectral',serif;font-weight:500;font-size:34px;letter-spacing:-.02em;margin:0 0 12px">What your gift does</h2>
-      <p style="font-size:16.5px;line-height:1.6;color:#524b42;margin:0;text-wrap:pretty">Each step up is a wider circle — one moment, one journey, one centre, then the whole of Sydney.</p>
+      <p style="font-size:16.5px;line-height:1.6;color:#524b42;margin:0;text-wrap:pretty">One moment, one journey, one centre, then the whole of Sydney.</p>
     </div>
 
     <div class="imp-ladder" style="display:flex;flex-direction:column;gap:16px">
@@ -283,8 +278,6 @@
       <a href="donate.html" style="background:#B85C38;color:#fff;padding:15px 30px;border-radius:100px;font-weight:600;font-size:15.5px">Donate</a>
       <a href="sponsor.html" style="border:1.5px solid #26221D;color:#26221D;padding:14px 30px;border-radius:100px;font-weight:600;font-size:15.5px">Sponsor a journey</a>
     </div>
-
-    <p style="text-align:center;font-size:14px;line-height:1.6;color:#7a7268;margin:22px auto 0;max-width:560px">We’re a small not-for-profit, not a registered charity, so gifts aren’t tax-deductible — but every dollar goes straight into packs.</p>
   </div>
 
   <div class="imp-dark" style="background:#26221D;color:#b8afa2;padding:52px 44px 44px">
