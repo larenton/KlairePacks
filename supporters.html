@@ -57,8 +57,8 @@
   <!-- WITH THANKS TO -->
   <div style="max-width:1200px;margin:0 auto;padding:56px 44px 76px">
     <h2 style="font-family:'Spectral',serif;font-weight:500;font-size:34px;letter-spacing:-.02em;margin:0 0 24px;text-align:center">With thanks to</h2>
-    <div id="thanks-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:18px"></div>
-    <p style="font-family:'Spectral',serif;font-style:italic;font-size:15px;line-height:1.6;color:#7a7268;text-align:center;margin:28px auto 0;max-width:620px">Placeholder names shown — drop in real logos and the grid grows itself.</p>
+    <div id="thanks-grid" style="display:grid;grid-template-columns:repeat(auto-fit,232px);justify-content:center;gap:18px"></div>
+    <p style="font-family:'Spectral',serif;font-style:italic;font-size:15px;line-height:1.6;color:#7a7268;text-align:center;margin:28px auto 0;max-width:620px">Each name sits in its own tile until a logo arrives — drop the file into img/supporters/ and the grid takes care of the rest.</p>
   </div>
 
   <!-- BECOME A SUPPORTER -->
@@ -101,28 +101,41 @@
   /* ------------------------------------------------------------------
      THE SUPPORTER LIST — this is the only thing you edit to add someone.
        name   required  business or community name. Doubles as the
-                        placeholder wordmark when there is no logo yet.
+                        wordmark shown until a logo file arrives.
        note   optional  the relationship line under the name, e.g.
-                        "The community of Ashford" or "Funding partner".
-       logo   optional  path to an image, any orientation. It sits
-                        contained inside the uniform tile, never cropped.
-       lead   optional  true to also feature them in the larger
-                        "Lead supporters" row at the top of the page.
-     Example with a logo:  { name: 'Bramley Bakery', logo: 'img/supporters/bramley.png' }
+                        "Claypool + their members" or "Funding partner".
+       logo   optional  path to an image in img/supporters/, any
+                        orientation. It sits contained inside the tile,
+                        never cropped. If the file is missing the card
+                        quietly falls back to the wordmark.
+       url    optional  the supporter's website. Makes the card a link.
+       lead   optional  true to feature them in the larger
+                        "Lead supporters" row instead of the grid below.
      ------------------------------------------------------------------ */
   var SUPPORTERS = [
-    { name: 'Bramley Bakery',          note: 'Bramley Bakery + their community', lead: true },
-    { name: 'The Ashford Fund',        note: 'Funding partner',                  lead: true },
-    { name: 'Harbourline Logistics',   note: 'Freight and storage partner',      lead: true },
-    { name: 'Marrickville Soap Co.',   note: 'Soap for every Welcome pack' },
-    { name: 'Ashford Community Club',  note: 'The community of Ashford' },
-    { name: 'Kettle & Co Roasters',    note: 'Kettle & Co + their community' },
-    { name: 'Pemberton Print',         note: 'Prints the pack bands' },
-    { name: 'Sienna Textiles',         note: 'Socks and eye masks' },
-    { name: 'Dover Street Collective', note: 'The community of Dover Street' },
-    { name: 'Wattlebird Ceramics',     note: 'Handmade pieces for Onward packs' },
-    { name: 'Halley & Finch',          note: 'Funding partner' },
-    { name: 'Lantern Road Pilates' }
+    {
+      name: 'All our donors',
+      lead: true
+    },
+    {
+      name: 'Claypool',
+      note: 'Claypool + their members',
+      url:  'https://claypool.com.au/',
+      lead: true
+    },
+    {
+      name: 'Senche Socks',
+      url:  'https://senche.com.au/',
+      lead: true
+    },
+    {
+      name: 'Sweet William Chocolate',
+      url:  'https://sweetwilliam.com.au/'
+    },
+    {
+      name: 'Worldwide Printing Pitt Street',
+      url:  'https://www.worldwide.com.au/centres/pitt-street/'
+    }
   ];
 
   (function () {
@@ -136,26 +149,37 @@
     function tile(supporter, height, radius, wordmarkSize) {
       var el = document.createElement('div');
       el.setAttribute('style', 'height:' + height + 'px;background:#FBF8F1;border-radius:' + radius + 'px;display:flex;align-items:center;justify-content:center;padding:16px;overflow:hidden');
+      function wordmark() {
+        var span = document.createElement('span');
+        span.setAttribute('style', "font-family:'Spectral',serif;font-weight:600;font-size:" + wordmarkSize + "px;line-height:1.25;letter-spacing:-.01em;color:#c2b8a8;text-align:center");
+        span.textContent = supporter.name;
+        return span;
+      }
+
       if (supporter.logo) {
         var img = document.createElement('img');
-        img.src = supporter.logo;
         img.alt = supporter.name;
         img.setAttribute('style', 'max-width:100%;max-height:100%;object-fit:contain;display:block');
+        /* If the file isn't there yet, show the wordmark instead of a broken image. */
+        img.onerror = function () { el.replaceChild(wordmark(), img); };
+        img.src = supporter.logo;
         el.appendChild(img);
       } else {
-        var wordmark = document.createElement('span');
-        wordmark.setAttribute('style', "font-family:'Spectral',serif;font-weight:600;font-size:" + wordmarkSize + "px;line-height:1.25;letter-spacing:-.01em;color:#c2b8a8;text-align:center");
-        wordmark.textContent = supporter.name;
-        el.appendChild(wordmark);
+        el.appendChild(wordmark());
       }
       return el;
     }
 
     function card(supporter, isLead) {
-      var el = document.createElement('div');
-      el.setAttribute('style', isLead
+      var el = document.createElement(supporter.url ? 'a' : 'div');
+      if (supporter.url) {
+        el.href = supporter.url;
+        el.target = '_blank';
+        el.rel = 'noopener';
+      }
+      el.setAttribute('style', 'display:block;color:inherit;' + (isLead
         ? 'background:#fff;border:1px solid rgba(38,34,29,.1);border-radius:16px;padding:34px'
-        : 'background:#fff;border:1px solid rgba(38,34,29,.1);border-radius:14px;padding:24px');
+        : 'background:#fff;border:1px solid rgba(38,34,29,.1);border-radius:14px;padding:24px'));
 
       el.appendChild(isLead
         ? tile(supporter, 130, 12, 21)
@@ -187,7 +211,8 @@
       leadWrap.parentNode.removeChild(leadWrap);
     }
 
-    SUPPORTERS.forEach(function (s) { thanksGrid.appendChild(card(s, false)); });
+    SUPPORTERS.filter(function (s) { return !s.lead; })
+              .forEach(function (s) { thanksGrid.appendChild(card(s, false)); });
   })();
 </script>
 </body>
