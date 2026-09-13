@@ -12,6 +12,7 @@ Static site. No build step — open `index.html` or serve the folder.
 | screening-rules.html | Screening rules |
 | order.html | Order packs (centres) |
 | impact.html | Impact |
+| supporters.html | Supporters |
 | donate.html | Donate |
 | sponsor.html | Sponsor a pack |
 | transparency.html | Transparency |
