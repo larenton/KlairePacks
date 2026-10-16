@@ -141,6 +141,15 @@
     </div>
   </div>
 
+  <!-- 1b — THE CENTRES WE SUPPLY -->
+  <div style="max-width:1200px;margin:0 auto;padding:58px 44px 0">
+    <div style="text-align:center;max-width:640px;margin:0 auto 32px">
+      <h2 style="font-family:'Spectral',serif;font-weight:500;font-size:34px;letter-spacing:-.02em;margin:0 0 12px">Where the packs are landing</h2>
+      <p style="font-size:16.5px;line-height:1.6;color:#524b42;margin:0;text-wrap:pretty">The centres that have Klaire Packs waiting for the women who walk through their doors.</p>
+    </div>
+    <div id="centres-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(208px,272px));justify-content:center;gap:16px"></div>
+  </div>
+
   <!-- 2 — STAT STRIP -->
   <div style="max-width:1000px;margin:0 auto;padding:56px 44px 12px">
     <div class="imp-strip" style="display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(38,34,29,.12);border-bottom:1px solid rgba(38,34,29,.12)">
@@ -305,5 +314,72 @@
     <div style="max-width:1200px;margin:30px auto 0;padding-top:20px;border-top:1px solid rgba(245,239,227,.12);font-size:12.5px;line-height:1.7">Klaire Packs is a not-for-profit association and is not a registered charity,&nbsp; gifts are not tax-deductible. Payments are handled by Zeffy; no card details are stored on this site.</div>
   </div>
 </div>
+<script>
+  /* ------------------------------------------------------------------
+     THE CENTRES WE SUPPLY — the only thing you edit to add a centre.
+     Sized so all five sit in one row, mirroring the five markers in the
+     meter above. Until then the row stays centred at whatever count.
+       name   required  the centre's name
+       logo   optional  path to a file in img/centres/. Any orientation;
+                        it sits contained in the tile, never cropped. If
+                        the file is missing the card falls back to the
+                        name, so a path can go in before the file does.
+       note   optional  a line under the name, e.g. "Malabar, Sydney"
+       url    optional  the centre's website. Makes the card a link.
+     ------------------------------------------------------------------ */
+  var CENTRES = [
+    {
+      name: 'Jarrah House',
+      logo: 'img/centres/jarrah-house.png'
+    }
+  ];
+
+  (function () {
+    var grid = document.getElementById('centres-grid');
+    if (!grid) return;
+
+    function card(centre) {
+      var el = document.createElement(centre.url ? 'a' : 'div');
+      if (centre.url) { el.href = centre.url; el.target = '_blank'; el.rel = 'noopener'; }
+      el.setAttribute('style', 'display:block;color:inherit;background:#fff;border:1px solid rgba(38,34,29,.1);border-radius:14px;padding:20px;text-align:center');
+
+      var tile = document.createElement('div');
+      tile.setAttribute('style', 'height:96px;background:#FBF8F1;border-radius:10px;display:flex;align-items:center;justify-content:center;padding:16px;overflow:hidden');
+
+      function wordmark() {
+        var span = document.createElement('span');
+        span.setAttribute('style', "font-family:'Spectral',serif;font-weight:600;font-size:15px;line-height:1.25;letter-spacing:-.01em;color:#c2b8a8");
+        span.textContent = centre.name;
+        return span;
+      }
+      if (centre.logo) {
+        var img = document.createElement('img');
+        img.alt = centre.name;
+        img.setAttribute('style', 'max-width:100%;max-height:100%;object-fit:contain;display:block');
+        img.onerror = function () { tile.replaceChild(wordmark(), img); };
+        img.src = centre.logo;
+        tile.appendChild(img);
+      } else {
+        tile.appendChild(wordmark());
+      }
+      el.appendChild(tile);
+
+      var name = document.createElement('div');
+      name.setAttribute('style', 'font-size:14.5px;font-weight:600;line-height:1.4;margin:14px 0 0');
+      name.textContent = centre.name;
+      el.appendChild(name);
+
+      if (centre.note) {
+        var note = document.createElement('div');
+        note.setAttribute('style', 'font-size:13px;line-height:1.5;color:#7a7268;margin:4px 0 0');
+        note.textContent = centre.note;
+        el.appendChild(note);
+      }
+      return el;
+    }
+
+    CENTRES.forEach(function (c) { grid.appendChild(card(c)); });
+  })();
+</script>
 </body>
 </html>
