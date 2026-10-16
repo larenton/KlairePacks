@@ -11,8 +11,10 @@ the foot of `impact.html`:
 Optional fields: `note` (a line under the name, e.g. "Malabar, Sydney")
 and `url` (makes the card link to the centre's own site).
 
-The row is sized to hold all five centres and stays centred at any
-count, so nothing needs re-laying-out as centres two to five arrive.
+The cards sit beside the heading rather than under it, to keep the page
+short, and the row re-flows on its own as centres are added: one or two
+sit large side by side, three or more pack tighter so the row still fits
+the column instead of stacking. Nothing needs re-laying-out.
 
 File format: same guidance as `img/supporters/README.md` — SVG if they
 have one, otherwise PNG with a transparent background, around 600-900px
