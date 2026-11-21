@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Run for Klaire — Klaire Packs</title>
+<meta name="description" content="[Runner] is running the Sydney Marathon on 29 August 2027 for Klaire Packs. Pick a kilometre. Any amount puts you on the course.">
+<meta property="og:title" content="Run for Klaire — Klaire Packs">
+<meta property="og:description" content="Running 42.2 km for Klaire. Pick a kilometre. Any amount puts you on the course.">
+<meta property="og:type" content="website">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="mobile.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&amp;family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#F5EFE3;color:#26221D;font-family:'Public Sans',system-ui,sans-serif}
+  a{color:#B85C38;text-decoration:none}
+  a:hover{color:#8f4526}
+  a.nav{color:#4a443c}
+  a.nav:hover{color:#B85C38}
+  section[id],div[id]{scroll-margin-top:92px}
+
+  /* ---------- PLACEHOLDERS (remove once the runner supplies real content) ----------
+     .ph      = copy the runner needs to write or confirm
+     .ph-img  = photo the runner needs to supply (spec written on the box) */
+  .ph{background:#F6E7E0;color:#8F4526;border-bottom:1.5px dashed #B85C38;padding:0 4px;border-radius:3px;font-style:normal}
+  .ph-img{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center;padding:22px;
+    background:repeating-linear-gradient(135deg,#EFE7D6 0 14px,#F5EFE3 14px 28px);border:2px dashed rgba(184,92,56,.55);border-radius:16px;color:#8F4526}
+  .ph-img b{font-family:'Spectral',serif;font-weight:600;font-size:19px;color:#26221D}
+  .ph-img span{font-size:13px;line-height:1.5;color:#524b42;max-width:320px}
+  .ph-tag{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#fff;background:#B85C38;border-radius:100px;padding:4px 11px}
+
+  /* ---------- Page components ---------- */
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#B85C38;margin-bottom:20px}
+  .eyebrow:before{content:"";width:22px;height:1.5px;background:#B85C38}
+  .h2{font-family:'Spectral',serif;font-weight:500;font-size:40px;line-height:1.1;letter-spacing:-.02em;margin:0 0 14px}
+  .lede{font-size:16.5px;line-height:1.6;color:#524b42;margin:0;text-wrap:pretty}
+
+  .km-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:10px}
+  .km{background:#fff;border:1px solid rgba(38,34,29,.09);border-radius:12px;padding:12px 12px 11px;display:flex;flex-direction:column;gap:3px;min-height:86px}
+  .km .n{font-family:'Spectral',serif;font-size:22px;font-weight:600;line-height:1}
+  .km .c{font-size:12px;color:#7a7268}
+  .km .t{font-size:12px;line-height:1.35;color:#524b42;margin-top:auto}
+  .km.welcome .n{color:#B85C38}.km.steady .n{color:#6E7D5B}.km.onward .n{color:#9C6A3F}
+  .km.named{background:#FBF8F1;border-color:rgba(184,92,56,.35)}
+  .km.klaire{grid-column:span 7;flex-direction:row;align-items:center;gap:18px;background:#26221D;border-color:#26221D;color:#F5EFE3;min-height:0;padding:16px 20px}
+  .km.klaire .n{color:#D89468;font-size:24px}
+  .km.klaire .t{margin:0;color:#b8afa2;font-size:14px}
+
+  .bar{position:relative;height:16px;border-radius:100px;background:#EFE7D6;overflow:hidden}
+  .bar > i{position:absolute;left:0;top:0;bottom:0;border-radius:100px;background:#B85C38}
+
+  .tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .tile{background:#fff;border:1px solid rgba(38,34,29,.09);border-radius:12px;padding:16px 18px;display:flex;flex-direction:column;gap:4px}
+  .tile b{font-family:'Spectral',serif;font-size:26px;font-weight:600;color:#B85C38;line-height:1.1}
+  .tile .l{font-weight:600;font-size:14.5px}
+  .tile .s{font-size:13px;line-height:1.5;color:#7a7268}
+  .tile.pick{border:1.5px solid #B85C38;background:#FBF8F1}
+
+  details.faq{background:#fff;border:1px solid rgba(38,34,29,.09);border-radius:12px;padding:0 22px}
+  details.faq summary{cursor:pointer;list-style:none;padding:18px 0;font-weight:600;font-size:15.5px;display:flex;justify-content:space-between;gap:16px}
+  details.faq summary::-webkit-details-marker{display:none}
+  details.faq summary:after{content:"+";font-family:'Spectral',serif;font-size:22px;line-height:1;color:#B85C38}
+  details.faq[open] summary:after{content:"–"}
+  details.faq p{margin:0 0 18px;font-size:14.5px;line-height:1.65;color:#524b42}
+
+  @media (max-width:760px){
+    .h2{font-size:28px}
+    .km-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+    .km{min-height:74px;padding:10px}
+    .km.klaire{grid-column:span 4;flex-direction:column;align-items:flex-start;gap:6px}
+    .tiles{grid-template-columns:1fr 1fr}
+    .ph-img.hero{height:280px !important}
+    .miles{display:flex;justify-content:space-between;gap:8px;height:auto !important}
+    .miles > div{position:static !important;transform:none !important;text-align:left !important;white-space:normal !important}
+    .miles > div > span{display:none !important}
+  }
+</style>
+<script src="https://www.zeffy.com/embed/v2/zeffy-embed.js" onerror="document.querySelectorAll('[data-zeffy-embed-fallback]').forEach(function(el){el.style.display='block';el.querySelectorAll('iframe[data-zeffy-embed-src]').forEach(function(f){f.src=f.getAttribute('data-zeffy-embed-src');});});"></script>
+</head>
+<body class="donate">
+
+
+<div>
+  <!-- ===== Header (same as every page) ===== -->
+  <div style="position:sticky;top:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:15px 44px;background:rgba(245,239,227,.9);backdrop-filter:blur(10px);border-bottom:1px solid rgba(38,34,29,.1)">
+    <a href="index.html" style="display:flex;align-items:center">
+      <img src="img/logo-ink.svg" alt="Klaire Packs" height="54" style="display:block;height:54px;width:auto">
+    </a>
+    <input type="checkbox" id="navcb" class="nav-cb"><label for="navcb" class="nav-burger" aria-label="Menu">☰</label><div class="nav-links" style="display:flex;align-items:center;gap:26px;font-size:14.5px;font-weight:500">
+      <a class="nav" href="packs.html">The packs</a>
+      <a class="nav" href="for-centres.html">For centres</a>
+      <a class="nav" href="impact.html">Impact</a>
+      <a class="nav" href="run.html" style="color:#B85C38;font-weight:600">Run for Klaire</a>
+      <a href="#give" style="background:#B85C38;color:#fff;padding:10px 18px;border-radius:100px;font-weight:600">Pick a kilometre</a>
+    </div>
+  </div>
+
+  <!-- ===== 1. Hero ===== -->
+  <div class="m-stack" style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;padding:66px 44px 56px;align-items:center">
+    <div style="max-width:560px">
+      <div class="eyebrow">Run for Klaire · Sunday 29 August 2027</div>
+      <h1 style="font-family:'Spectral',serif;font-weight:500;font-size:60px;line-height:1.02;letter-spacing:-.02em;margin:0 0 22px;text-wrap:pretty">Running 42.2&nbsp;km for Klaire.</h1>
+      <p style="font-size:18px;line-height:1.6;color:#524b42;margin:0 0 14px;text-wrap:pretty">
+        <span class="ph">[Runner's first name]</span> is running the Sydney Marathon to put care packs in the hands of women in recovery. <span class="ph">[One sentence, in your own words, on why you're running for Klaire.]</span>
+      </p>
+      <p style="font-size:15.5px;line-height:1.6;color:#524b42;margin:0 0 30px">Pick a kilometre. Any amount puts you on the course, and on race morning you'll get a message as <span class="ph">[he / she / they]</span> pass it.</p>
+      <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+        <a href="#give" style="background:#B85C38;color:#fff;padding:15px 26px;border-radius:100px;font-weight:600;font-size:15.5px">Pick your kilometre</a>
+        <a href="#board" style="font-weight:600;font-size:15.5px;color:#26221D;border-bottom:1.5px solid #26221D;padding-bottom:2px">See the kilometre board →</a>
+      </div>
+    </div>
+    <div class="ph-img hero" style="height:480px">
+      <div class="ph-tag">Photo to supply</div>
+      <b>Runner portrait — training</b>
+      <span>Landscape or portrait, at least 1600&nbsp;px on the long edge. Natural light, mid-run or just after. Your face is fine here; no race logos or bib numbers in shot.</span>
+    </div>
+  </div>
+
+  <!-- ===== 2. Thermometer ===== -->
+  <div style="background:#EFE7D6;border-top:1px solid rgba(38,34,29,.1);border-bottom:1px solid rgba(38,34,29,.1)">
+    <div style="max-width:1200px;margin:0 auto;padding:34px 44px 36px">
+      <div class="m-stack" style="display:grid;grid-template-columns:auto 1fr;gap:40px;align-items:center">
+        <div>
+          <div style="font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#7a7268;margin-bottom:6px">Raised so far</div>
+          <div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap">
+            <span style="font-family:'Spectral',serif;font-size:46px;font-weight:600;line-height:1">$0</span>
+            <span style="font-size:15px;color:#524b42">of $8,500 · <b style="color:#26221D">0</b> people on the course</span>
+          </div>
+        </div>
+        <div>
+          <div class="bar" role="img" aria-label="0% of the $8,500 goal"><i style="width:0%"></i></div>
+          <div class="miles" style="position:relative;height:44px;margin-top:8px;font-size:12.5px;line-height:1.35">
+            <div style="position:absolute;left:25%;transform:translateX(-50%);text-align:center;white-space:nowrap"><span style="display:block;width:2px;height:8px;background:#B85C38;margin:0 auto 4px"></span><b style="color:#8F4526">Welcome</b> · $2,125</div>
+            <div style="position:absolute;left:60%;transform:translateX(-50%);text-align:center;white-space:nowrap"><span style="display:block;width:2px;height:8px;background:#6E7D5B;margin:0 auto 4px"></span><b style="color:#556046">Steady</b> · $5,100</div>
+            <div style="position:absolute;right:0;text-align:right;white-space:nowrap"><span style="display:block;width:2px;height:8px;background:#9C6A3F;margin:0 0 4px auto"></span><b style="color:#835733">Onward</b> · $8,500</div>
+          </div>
+        </div>
+      </div>
+      <p style="font-size:13px;color:#7a7268;margin:6px 0 0">$8,500 gives 100 women the whole journey, all three packs. <span class="ph">[Total updated from Zeffy weekly — confirm who owns this.]</span></p>
+    </div>
+  </div>
+
+  <!-- ===== 3. The form ===== -->
+  <section id="give">
+  <div class="m-stack" style="max-width:1200px;margin:0 auto;padding:66px 44px 20px;display:grid;grid-template-columns:1fr 1.05fr;gap:52px;align-items:start">
+    <div class="pack-media" style="position:sticky;top:100px">
+      <div class="eyebrow">Give</div>
+      <h2 class="h2">Every kilometre, a pack.</h2>
+      <p class="lede" style="margin-bottom:24px">Any gift buys real pack items, and everyone who gives picks a kilometre to run with <span class="ph">[Runner's first name]</span>.</p>
+
+      <div class="tiles" style="margin-bottom:18px">
+        <div class="tile"><b>$10</b><span class="l">Her first week's basics</span><span class="s">Sunscreen and an eye mask</span></div>
+        <div class="tile"><b>$28</b><span class="l">A Welcome pack</span><span class="s">Everything for her first days</span></div>
+        <div class="tile pick"><b>$42</b><span class="l">A dollar a kilometre</span><span class="s">A whole Steady pack, with a little to spare</span></div>
+        <div class="tile"><b>$85</b><span class="l">Her whole journey</span><span class="s">All three packs, and you can name a kilometre</span></div>
+      </div>
+      <p style="font-size:14px;line-height:1.6;color:#524b42;margin:0 0 18px">Prefer to give monthly? <b style="color:#26221D">$8.50 a month until race day</b> adds up to a whole journey. Give $85 or more and you can name your kilometre — there are only 42.</p>
+
+      <div style="background:#EFE7D6;border-radius:12px;padding:18px 22px;font-size:14px;line-height:1.65;color:#524b42">
+        <b style="color:#26221D">Please note.</b> We're a not-for-profit association, not a registered charity, so gifts aren't tax-deductible. Zeffy is free for us; at checkout it asks if you'd like to tip Zeffy. That's optional, and you can set it to $0.
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div style="background:#FBF8F1;border:1px solid rgba(38,34,29,.09);border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:14px">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap">
+          <div style="font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#B85C38">Zeffy · Run for Klaire</div>
+          <div style="font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#7a7268;background:#EFE7D6;border-radius:100px;padding:4px 12px">Secure</div>
+        </div>
+        <a class="embed-mobile" href="https://www.zeffy.com/en-AU/ticketing/sydney-marathon" target="_blank" rel="noopener" style="display:none;background:#B85C38;color:#fff;border-radius:14px;font-weight:700;font-size:16px;text-decoration:none">Pick your kilometre →<span style="font-size:13px;font-weight:500;opacity:.85">Secure checkout on Zeffy — opens in a new tab</span></a>
+        <div class="embed-desktop" style="border-radius:12px;overflow:hidden;background:#fff;border:1px solid rgba(38,34,29,.09)">
+          <div data-zeffy-embed="" data-form-url="/embed/ticketing/sydney-marathon"></div>
+          <div data-zeffy-embed-fallback="" style="display:none">
+            <div style="position:relative;overflow:hidden;width:100%;height:450px">
+              <iframe title="Run for Klaire form powered by Zeffy" style="position:absolute;border:0;top:0;left:0;bottom:0;right:0;width:100%;height:100%" data-zeffy-embed-src="https://www.zeffy.com/embed/ticketing/sydney-marathon" allowpaymentrequest="" allowTransparency="true"></iframe>
+            </div>
+          </div>
+        </div>
+        <div style="font-size:13.5px;color:#524b42">Trouble seeing the form? Some clinic and workplace networks block embedded forms. <a href="https://www.zeffy.com/en-AU/ticketing/sydney-marathon" target="_blank" rel="noopener" style="font-weight:600">Open the form in a new tab →</a></div>
+      </div>
+      <p style="font-size:13px;line-height:1.65;color:#7a7268;margin:0">Donations go to Klaire Packs' work, never to the runner. <span class="ph">[Runner's first name]</span> pays their own entry, travel and race costs. Payments are handled by Zeffy and land in the Association's account.</p>
+    </div>
+  </div>
+  </section>
+
+  <!-- ===== 4. Kilometre board ===== -->
+  <section id="board">
+  <div style="max-width:1200px;margin:0 auto;padding:56px 44px 20px">
+    <div class="m-stack" style="display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:end;margin-bottom:28px">
+      <div>
+        <div class="eyebrow">The kilometre board</div>
+        <h2 class="h2" style="margin:0">42 kilometres. Pick yours.</h2>
+      </div>
+      <p class="lede" style="font-size:15px">Each tile shows how many people are running that kilometre. Named kilometres carry their dedication. The final 195 metres are Klaire's. <span class="ph">[Updated weekly from Zeffy, daily in the countdown.]</span></p>
+    </div>
+    <div style="display:flex;gap:18px;flex-wrap:wrap;font-size:12.5px;color:#524b42;margin-bottom:14px">
+      <span><b style="color:#B85C38">●</b> Welcome · km 1–14</span>
+      <span><b style="color:#6E7D5B">●</b> Steady · km 15–28</span>
+      <span><b style="color:#9C6A3F">●</b> Onward · km 29–42</span>
+    </div>
+    <div class="km-grid">
+      <div class="km welcome"><span class="n">1</span><span class="c">0 running</span><span class="t">Free to name</span></div>
+      <div class="km welcome"><span class="n">2</span><span class="c">0 running</span><span class="t">Free to name</span></div>
+      <div class="km welcome"><span class="n">3</span><span class="c">0 running</span><span class="t">Free to name</span></div>
+      <div class="km welcome"><span class="n">4</span><span class="c">0 running</span><span class="t">Free to name</span></div>
+      <div class="km welcome"><span class="n">5</span><span class="c">0 running</span><span class="t">Free to name</span></div>
+      <div class="km welcome"><span class="n">6</span><span class="c">0 running</span><span class="t">Free to name</span></div>
+      <div class="km welcome"><span class="n">7</span><span class="c">0 running</span><span class="t">Free to name</span></div>
+      <div class="km welcome"><span class="n">8</span><span class="c">0 running</span><span class="t">Free to name</span></div>
+      <div class="km welcome"><span class="n">9</span><span class="c">0 running</span><span class="t">Free to name</span></div>
+      <div class="km welcome"><span class="n">10</span><span class="c">0 running</span><span class="t">Free to name</span></div>
+      <div class="km welcome"><span class="n">11</span><span class="c">0 running</span><span class="t">Free to name</span></div>
+      <div class="km welcome"><span class="n">12</span><span class="c">0 running</span><span class="t">Free to name</span></div>
+      <div class="km welcome"><span class="n">13</span><span class="c">0 running</span><span class="t">Free to name</span></div>
+      <div class="km welcome"><span class="n">14</span><span class="c">0 running</span><span class="t">Free to name</span></div>
+      <div class="km steady"><span class="n">15</span><span class="c">0 running</span><span class="t">Free to name</span></div>
+      <div class="km steady"><span class="n">16</span><span class="c">0 running</span><span class="t">Free to name</span></div>
+      <div class="km steady"><span class="n">17</span><span class="c">0 running</span><span class="t">Free to name</span></div>
+      <div class="km steady"><span class="n">18</span><span class="c">0 running</span><span class="t">Free to name</span></div>
+      <div class="km steady"><span class="n">19</span><span class="c">0 running</span><span class="t">Free to name</span></div>
+      <div class="km steady"><span class="n">20</span><span class="c">0 running</span><span class="t">Free to name</span></div>
+      <div class="km steady"><span class="n">21</span><span class="c">0 running</span><span class="t">Free to name</span></div>
+      <div class="km steady"><span class="n">22</span><span class="c">0 running</span><span class="t">Free to name</span></div>
+      <div class="km steady"><span class="n">23</span><span class="c">0 running</span><span class="t">Free to name</span></div>
+      <div class="km steady"><span class="n">24</span><span class="c">0 running</span><span class="t">Free to name</span></div>
+      <div class="km steady"><span class="n">25</span><span class="c">0 running</span><span class="t">Free to name</span></div>
+      <div class="km steady"><span class="n">26</span><span class="c">0 running</span><span class="t">Free to name</span></div>
+      <div class="km steady"><span class="n">27</span><span class="c">0 running</span><span class="t">Free to name</span></div>
+      <div class="km steady"><span class="n">28</span><span class="c">0 running</span><span class="t">Free to name</span></div>
+      <div class="km onward"><span class="n">29</span><span class="c">0 running</span><span class="t">Free to name</span></div>
+      <div class="km onward"><span class="n">30</span><span class="c">0 running</span><span class="t">Free to name</span></div>
+      <div class="km onward"><span class="n">31</span><span class="c">0 running</span><span class="t">Free to name</span></div>
+      <div class="km onward"><span class="n">32</span><span class="c">0 running</span><span class="t">Free to name</span></div>
+      <div class="km onward"><span class="n">33</span><span class="c">0 running</span><span class="t">Free to name</span></div>
+      <div class="km onward"><span class="n">34</span><span class="c">0 running</span><span class="t">Free to name</span></div>
+      <div class="km onward"><span class="n">35</span><span class="c">0 running</span><span class="t">Free to name</span></div>
+      <div class="km onward"><span class="n">36</span><span class="c">0 running</span><span class="t">Free to name</span></div>
+      <div class="km onward"><span class="n">37</span><span class="c">0 running</span><span class="t">Free to name</span></div>
+      <div class="km onward"><span class="n">38</span><span class="c">0 running</span><span class="t">Free to name</span></div>
+      <div class="km onward"><span class="n">39</span><span class="c">0 running</span><span class="t">Free to name</span></div>
+      <div class="km onward"><span class="n">40</span><span class="c">0 running</span><span class="t">Free to name</span></div>
+      <div class="km onward"><span class="n">41</span><span class="c">0 running</span><span class="t">Free to name</span></div>
+      <div class="km onward"><span class="n">42</span><span class="c">0 running</span><span class="t">Free to name</span></div>
+      <div class="km klaire"><span class="n">The last 195&nbsp;m</span><span class="t">Klaire's. Every name on this board carries the runner over the line at the Opera House.</span></div>
+    </div>
+  </div>
+  </section>
+
+  <!-- ===== 5. Why: Klaire's story + the packs ===== -->
+  <div style="background:#26221D;color:#F5EFE3;padding:70px 44px;margin-top:56px">
+    <div class="m-stack" style="max-width:1100px;margin:0 auto;display:grid;grid-template-columns:.9fr 1.1fr;gap:52px;align-items:center">
+      <div class="ph-img" style="height:420px;background:repeating-linear-gradient(135deg,#3a342d 0 14px,#2f2a24 14px 28px);border-color:rgba(216,148,104,.6);color:#D89468">
+        <div class="ph-tag">Photo to supply · family sign-off</div>
+        <b style="color:#F5EFE3">Photo of Klaire, or the runner with the packs</b>
+        <span style="color:#b8afa2">Only with the family's approval. If no photo of Klaire is used, a photo of the runner holding the three boxes works well here. Portrait, at least 1200&nbsp;px wide.</span>
+      </div>
+      <div>
+        <div style="font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#D89468;margin-bottom:20px">Why I'm running</div>
+        <p style="font-family:'Spectral',serif;font-size:27px;line-height:1.45;margin:0 0 22px;text-wrap:pretty"><span class="ph" style="background:rgba(216,148,104,.18);color:#F5EFE3;border-color:#D89468">[A one-line opener in your voice — e.g. how you knew Klaire, or why this cause.]</span></p>
+        <div style="display:flex;flex-direction:column;gap:14px;font-size:15.5px;line-height:1.7;color:#d6cec2">
+          <p style="margin:0"><span class="ph" style="background:rgba(216,148,104,.18);color:#F5EFE3;border-color:#D89468">[Paragraph 1 — who Klaire was. The family approves every word.]</span></p>
+          <p style="margin:0"><span class="ph" style="background:rgba(216,148,104,.18);color:#F5EFE3;border-color:#D89468">[Paragraph 2 — what Klaire Packs does: care packs for women in residential recovery, from arrival to discharge.]</span></p>
+          <p style="margin:0"><span class="ph" style="background:rgba(216,148,104,.18);color:#F5EFE3;border-color:#D89468">[Paragraph 3 — why the marathon: crowds shout the name on your shirt, and on 29 August Sydney will shout hers.]</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="max-width:1200px;margin:0 auto;padding:70px 44px 20px">
+    <div style="text-align:center;max-width:620px;margin:0 auto 40px">
+      <h2 class="h2">Three packs, one journey</h2>
+      <p class="lede">Your gift buys the things inside. Each pack is tailored to a different stretch of recovery, just as each stretch of the course asks something different of a runner.</p>
+    </div>
+    <div class="m-stack" style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px">
+      <div style="background:#fff;border-radius:14px;overflow:hidden;border:1px solid rgba(38,34,29,.09);display:flex;flex-direction:column">
+        <img src="img/pack-welcome.jpeg" alt="The Welcome pack" style="width:100%;height:170px;object-fit:cover;display:block">
+        <div style="padding:24px;display:flex;flex-direction:column;gap:8px;flex:1">
+          <div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#B85C38">Start · km 1–14</div>
+          <h3 style="font-family:'Spectral',serif;font-weight:600;font-size:23px;margin:0">Welcome</h3>
+          <p style="font-size:14.5px;line-height:1.55;color:#524b42;margin:0">For the first hard days, when everything feels overwhelming. $28 puts one in her hands on day one.</p>
+        </div>
+      </div>
+      <div style="background:#fff;border-radius:14px;overflow:hidden;border:1px solid rgba(38,34,29,.09);display:flex;flex-direction:column">
+        <img src="img/pack-steady.jpeg" alt="The Steady pack" style="width:100%;height:170px;object-fit:cover;display:block">
+        <div style="padding:24px;display:flex;flex-direction:column;gap:8px;flex:1">
+          <div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#6E7D5B">Steady · km 15–28</div>
+          <h3 style="font-family:'Spectral',serif;font-weight:600;font-size:23px;margin:0">Steady</h3>
+          <p style="font-size:14.5px;line-height:1.55;color:#524b42;margin:0">For the middle stretch, when motivation dips and progress feels slow. Rest is doing something.</p>
+        </div>
+      </div>
+      <div style="background:#fff;border-radius:14px;overflow:hidden;border:1px solid rgba(38,34,29,.09);display:flex;flex-direction:column">
+        <img src="img/pack-onward.jpeg" alt="The Onward pack" style="width:100%;height:170px;object-fit:cover;display:block">
+        <div style="padding:24px;display:flex;flex-direction:column;gap:8px;flex:1">
+          <div style="font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#9c6a3f">Onward · km 29–42</div>
+          <h3 style="font-family:'Spectral',serif;font-weight:600;font-size:23px;margin:0">Onward</h3>
+          <p style="font-size:14.5px;line-height:1.55;color:#524b42;margin:0">For leaving, equal parts practical and hopeful. The run home.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 6. Training log ===== -->
+  <section id="training">
+  <div style="max-width:1200px;margin:0 auto;padding:56px 44px 20px">
+    <div class="m-stack" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start">
+      <div>
+        <div class="eyebrow">Training log</div>
+        <h2 class="h2">Week <span class="ph">[00]</span>: <span class="ph">[headline]</span></h2>
+        <div style="display:flex;gap:28px;flex-wrap:wrap;margin:18px 0 20px">
+          <div><div style="font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#7a7268">This week</div><div style="font-family:'Spectral',serif;font-size:28px;font-weight:600"><span class="ph">[00] km</span></div></div>
+          <div><div style="font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#7a7268">Long run</div><div style="font-family:'Spectral',serif;font-size:28px;font-weight:600"><span class="ph">[00] km</span></div></div>
+          <div><div style="font-size:11.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:#7a7268">Weeks to go</div><div style="font-family:'Spectral',serif;font-size:28px;font-weight:600"><span class="ph">[00]</span></div></div>
+        </div>
+        <p class="lede" style="font-size:15.5px;margin-bottom:18px"><span class="ph">[Two or three sentences from this week: how the long run felt, one pack item and why it's in there, and a thank-you to whoever joined the course.]</span></p>
+        <div style="background:#fff;border:1px solid rgba(38,34,29,.09);border-radius:12px;padding:16px 18px;display:flex;align-items:center;gap:14px">
+          <div style="width:44px;height:44px;border-radius:50%;background:#B85C38;color:#fff;display:flex;align-items:center;justify-content:center;font-size:16px;flex:none" aria-hidden="true">▶</div>
+          <div style="flex:1;min-width:0">
+            <div style="font-weight:600;font-size:14.5px">Long-run voice note</div>
+            <div style="font-size:13px;color:#7a7268"><span class="ph">[Audio to supply: ~60 seconds, recorded at the end of each long run. Phone voice memo (.m4a or .mp3) is fine.]</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="ph-img" style="height:380px">
+        <div class="ph-tag">Photo to supply · weekly</div>
+        <b>This week's training photo</b>
+        <span>One per week. Shoes, a route, a sunrise, the Strava map — anything from the run. Landscape, at least 1200&nbsp;px wide.</span>
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <!-- ===== 7. Fundraise with us ===== -->
+  <div style="max-width:1200px;margin:0 auto;padding:56px 44px 20px">
+    <div class="m-stack" style="background:#6E7D5B;color:#F5EFE3;border-radius:18px;padding:46px;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center">
+      <div>
+        <div style="font-size:12.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#E8EDDD;margin-bottom:16px">Want to do more?</div>
+        <p style="font-family:'Spectral',serif;font-size:27px;line-height:1.4;margin:0 0 10px;text-wrap:pretty">Nobody does the long run alone. Join Team Klaire.</p>
+        <p style="font-size:15px;line-height:1.6;color:#E8EDDD;margin:0">Raise from your own circle. Your supporters use the same form and pick a kilometre too, and everything counts toward one total.</p>
+      </div>
+      <a href="mailto:luke@klairepacks.org?subject=Team%20Klaire" style="justify-self:start;background:#F5EFE3;color:#26221D;padding:15px 28px;border-radius:100px;font-weight:700;font-size:15.5px">Fundraise with us</a>
+    </div>
+  </div>
+
+  <!-- ===== 8. FAQ ===== -->
+  <section id="faq">
+  <div style="max-width:860px;margin:0 auto;padding:56px 44px 76px">
+    <div class="eyebrow">Questions</div>
+    <h2 class="h2" style="margin-bottom:24px">Before you give</h2>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <details class="faq"><summary>Where does my money go?</summary><p>To Klaire Packs' work: the boxes, printing, postage and the items inside the Welcome, Steady and Onward packs. Gifts go through Zeffy into the Association's own bank account, never to the runner. <a href="transparency.html" style="font-weight:600">See the numbers</a>.</p></details>
+      <details class="faq"><summary>Is my gift tax-deductible?</summary><p>No. Klaire Packs is a not-for-profit association, not a registered charity, so gifts aren't tax-deductible. Zeffy will email you a receipt confirming what you gave.</p></details>
+      <details class="faq"><summary>What's the tip Zeffy asks for at checkout?</summary><p>Zeffy is free for us, which is how your whole gift reaches Klaire Packs. At checkout it asks whether you'd like to tip Zeffy itself. That's optional, and you can set it to $0.</p></details>
+      <details class="faq"><summary>Who pays for the runner's entry and costs?</summary><p><span class="ph">[Runner's first name]</span> pays their own entry, travel, shoes and race-week costs. None of it comes from donations.</p></details>
+      <details class="faq"><summary>How does picking a kilometre work?</summary><p>When you give, choose a kilometre from 1 to 42, or leave it on "Surprise me". On race morning you'll get a message as the runner passes it. Give $85 or more and you can name your kilometre — only 42 can be named, first come, first served. Dedications are reviewed before they go on the board.</p></details>
+      <details class="faq"><summary>Is Klaire Packs an official charity of the Sydney Marathon?</summary><p>No. <span class="ph">[Runner's first name]</span> is running the Sydney Marathon on 29 August 2027 to raise money for Klaire Packs. We aren't an official charity partner of the event, and the event hasn't endorsed this campaign.</p></details>
+      <details class="faq"><summary>Can I stay anonymous?</summary><p>Yes. The form asks how your name should appear: full name, first name only, or anonymous. The kilometre board only ever shows what you choose.</p></details>
+    </div>
+  </div>
+  </section>
+
+  <!-- ===== Footer (same as every page) ===== -->
+  <div style="background:#26221D;color:#b8afa2;padding:52px 44px 44px">
+    <div class="m-stack" style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:36px;font-size:13.5px">
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <img src="img/logo-paper.svg" alt="Klaire Packs" height="56" style="display:block;height:56px;width:auto;align-self:flex-start">
+        <div style="font-family:'Spectral',serif;font-style:italic;font-size:17px;color:#D89468">In honour of Klaire.</div>
+        <div style="line-height:1.7">Australian not-for-profit association<br>ABN 28 968 180 521<br><a href="mailto:luke@klairepacks.org" style="color:#b8afa2">luke@klairepacks.org</a></div>
+        <a class="nav" href="Design-System.html" style="color:#b8afa2">Brand &amp; media kit</a>
+      </div>
+      <div class="m-hide" style="display:flex;flex-direction:column;gap:10px">
+        <div style="color:#F5EFE3;font-weight:600;margin-bottom:2px">Support</div>
+        <a class="nav" href="run.html" style="color:#b8afa2">Run for Klaire</a>
+        <a class="nav" href="donate.html" style="color:#b8afa2">Donate</a>
+        <a class="nav" href="sponsor.html" style="color:#b8afa2">Sponsor a journey</a>
+        <a class="nav" href="supporters.html" style="color:#b8afa2">Supporters</a>
+        <a class="nav" href="transparency.html" style="color:#b8afa2">Transparency</a>
+      </div>
+      <div class="m-hide" style="display:flex;flex-direction:column;gap:10px">
+        <div style="color:#F5EFE3;font-weight:600;margin-bottom:2px">The work</div>
+        <a class="nav" href="packs.html" style="color:#b8afa2">The packs</a>
+        <a class="nav" href="for-centres.html" style="color:#b8afa2">For centres</a>
+        <a class="nav" href="screening-rules.html" style="color:#b8afa2">Screening rules</a>
+        <a class="nav" href="impact.html" style="color:#b8afa2">Impact</a>
+      </div>
+    </div>
+    <div style="max-width:1200px;margin:30px auto 0;padding-top:20px;border-top:1px solid rgba(245,239,227,.12);font-size:12.5px;line-height:1.7">Klaire Packs is a not-for-profit association and is not a registered charity — gifts are not tax-deductible. Klaire Packs is not an official charity partner of the Sydney Marathon. Payments are handled by Zeffy; no card details are stored on this site.</div>
+  </div>
+</div>
+</body>
+</html>

@@ -17,6 +17,7 @@ Static site. No build step — open `index.html` or serve the folder.
 | sponsor.html | Sponsor a pack |
 | transparency.html | Transparency |
 | thank-you.html | Thank you |
+| run.html | Run for Klaire — Sydney Marathon 2027 campaign (klairepacks.org/run) |
 
 Every page is plain, self-contained HTML — no runtime, no build step. Edit any file directly and refresh. All pages are mobile responsive (hamburger nav, stacked layout, collapsed embeds) via the shared `mobile.css`.
 
