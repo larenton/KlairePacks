@@ -6,9 +6,9 @@
 <!-- Remove this robots line at public launch (brief item 12). -->
 <meta name="robots" content="noindex, nofollow">
 <title>Run the Sydney Marathon for Klaire Packs</title>
-<meta name="description" content="Alice is running the Sydney Marathon for Klaire Packs. $85 gives one woman in recovery three care packs.">
+<meta name="description" content="Alice is running the Sydney Marathon for Klaire Packs. $2.50 per km gives one woman all three care packs.">
 <meta property="og:title" content="Run the Sydney Marathon for Klaire Packs">
-<meta property="og:description" content="Alice is running the Sydney Marathon for Klaire Packs. $85 gives one woman in recovery three care packs.">
+<meta property="og:description" content="Alice is running the Sydney Marathon for Klaire Packs. $2.50 per km gives one woman all three care packs.">
 <meta property="og:type" content="website">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -127,7 +127,16 @@
   .foot .fine{display:flex;flex-direction:column;gap:12px}
   .foot .help{background:rgba(245,239,227,.08);border-radius:12px;padding:16px 18px;color:#F5EFE3}
 
-  /* Phone: sticky Donate bar after the top section */
+  /* Footer copied from the main site: match its link style and phone layout */
+  .site-foot a{text-decoration:none}
+  .site-foot a:hover{color:#F5EFE3 !important}
+  @media (max-width:760px){
+    .site-foot{padding:44px 20px 40px !important}
+    .site-foot .m-stack{grid-template-columns:1fr !important;gap:18px !important}
+    .site-foot .m-hide{display:none !important}
+  }
+
+  /* Phone: sticky Sponsor Alice bar after the top section */
   .sticky{position:fixed;left:0;right:0;bottom:0;z-index:80;padding:12px 16px calc(12px + env(safe-area-inset-bottom));background:rgba(245,239,227,.97);
     border-top:1px solid var(--line);transform:translateY(110%);transition:transform .2s}
   .sticky.on{transform:none}
@@ -157,11 +166,11 @@
 </head>
 <body>
 
-<!-- 1. Simple header: logo + one Donate button. No menu, so nobody leaves before giving. -->
+<!-- 1. Simple header: logo + one Sponsor Alice button. No menu, so nobody leaves before giving. -->
 <header class="top">
   <div class="wrap">
     <a href="https://klairepacks.org/" aria-label="Klaire Packs home"><img src="img/logo-ink.svg" alt="Klaire Packs" height="50" style="height:50px;width:auto"></a>
-    <a class="btn give-link" href="#give">Donate</a>
+    <a class="btn give-link" href="#give">Sponsor Alice</a>
   </div>
 </header>
 
@@ -174,8 +183,8 @@
         <p>Klaire Packs gives free care packs to women in residential recovery, so no one goes through it alone.</p>
         <p>The race is on Sunday 29 August 2027. Alice will run 42 kilometres. Every gift turns that effort into care packs.</p>
       </div>
-      <a class="btn give-link" href="#give">Give a care pack</a>
-      <p class="under">$85 gives one woman all three care packs.</p>
+      <a class="btn give-link" href="#give">Sponsor Alice</a>
+      <p class="under">$2.50 per km gives one woman all three care packs.</p>
     </div>
     <div class="ph-img" style="height:500px" role="img" aria-label="Photo to come">
       <span class="ph-tag">Photo to supply</span>
@@ -195,16 +204,16 @@
           <p><span class="ph">[Paragraph 3: what 42 kilometres will ask of you, and what you hope each gift does.]</span></p>
           <p class="sign">— Alice</p>
         </div>
-        <p class="latest"><b>Latest from Alice:</b> <span class="ph">[One line, updated monthly. For example: "Week 12. My longest run yet: 24 kilometres."]</span></p>
+        <p class="latest" hidden><b>Latest from Alice:</b> <span class="ph">[One line, updated monthly. For example: "Week 12. My longest run yet: 24 kilometres."]</span></p>
         <p style="margin-top:20px;font-size:17px">Want to know more about Klaire Packs? <a href="https://klairepacks.org/">Visit klairepacks.org</a></p>
       </div>
     </div>
   </section>
 
-  <!-- 4. What your gift buys: the three packs, before the ask. -->
+  <!-- 4. How sponsoring helps: the three packs, before the ask. -->
   <section class="wrap packs" id="packs">
     <div class="packs-head">
-      <h2>What your gift buys</h2>
+      <h2>How sponsoring helps</h2>
       <p>Klaire Packs gives free care packs to women in residential recovery. Each woman gets three: one when she arrives, one in the middle of treatment, and one when she leaves. Your gift pays for them.</p>
     </div>
     <div class="pack-grid">
@@ -236,27 +245,18 @@
         </div>
       </article>
     </div>
-    <p style="margin-top:22px;font-size:17px">Items can change a little, depending on supply. <a href="transparency.html">See exactly what's in each pack and what it costs</a></p>
+    <p style="margin-top:22px;font-size:17px"><a href="https://klairepacks.org/packs.html">See what's inside the packs</a></p>
   </section>
 
-  <!-- 5. Give: three amounts + Other, one Donate, one reassurance block. -->
+  <!-- 5. Give: one price line, one Sponsor Alice button (phones) or the embedded form (desktop). -->
   <section class="wrap give" id="give">
     <div class="give-grid">
       <div>
-        <h2>Give a care pack</h2>
-        <p class="prices"><b>$85 gives one woman the full journey: all three packs.</b> $28 pays for a Welcome pack and $42 for a Steady pack. Any amount helps.</p>
+        <h2>Give a care pack by sponsoring Alice</h2>
+        <p class="prices">$2.50 per km gives one woman all three care packs.</p>
         <div class="phone-give" style="margin-bottom:24px">
-          <a class="btn" href="https://www.zeffy.com/en-AU/ticketing/sydney-marathon-2">Donate now</a>
+          <a class="btn" href="https://www.zeffy.com/en-AU/ticketing/sydney-marathon-2">Sponsor Alice</a>
           <p style="margin-top:12px;font-size:17px;color:var(--body)">You'll go to our secure payment page, run by Zeffy.</p>
-        </div>
-        <div class="reassure">
-          <h3>Before you give</h3>
-          <ul>
-            <li>Your gift goes to Klaire Packs, not to the runner. Alice pays all race costs personally.</li>
-            <li>Klaire Packs is a not-for-profit association, not a registered charity, so gifts aren't tax-deductible.</li>
-            <li>Payment is handled securely by Zeffy. We never see or store your card details.</li>
-            <li>Zeffy may suggest a tip to Zeffy at checkout. You can change it to $0.</li>
-          </ul>
         </div>
       </div>
 
@@ -289,33 +289,43 @@
     <div class="measure">
       <h2>Questions</h2>
       <details><summary>Who gets the care packs?</summary><p>Women in residential recovery. Each woman gets her pack at the right stage of her treatment.</p></details>
-      <details><summary>Will I get a receipt?</summary><p>Yes. Zeffy emails you a receipt. Gifts aren't tax-deductible, because Klaire Packs is not a registered charity.</p></details>
-      <details><summary>Can I run or fundraise with you?</summary><p>Yes, we'd love that. Email <a href="mailto:luke@klairepacks.org">luke@klairepacks.org</a> and we'll get back to you.</p></details>
+      <details><summary>Will I get a receipt?</summary><p>Yes. Zeffy emails you a receipt. Gifts aren't tax-deductible, as although Klaire Packs is a Not-for-profit, we are not currently registered for DGR status.</p></details>
+      <details><summary>Can I run or fundraise with you?</summary><p>Yes, we'd love that. Email <a href="mailto:hello@klairepacks.org">hello@klairepacks.org</a> and we'll get back to you.</p></details>
     </div>
   </section>
 </main>
 
-<!-- Slim footer -->
-<footer class="foot">
-  <div class="wrap foot-grid">
-    <div>
-      <img src="img/logo-paper.svg" alt="Klaire Packs" height="52" style="height:52px;width:auto">
-      <p class="honour">Made with care.</p>
-      <p>Contact: <a href="mailto:luke@klairepacks.org">luke@klairepacks.org</a><br>
-      <a href="https://klairepacks.org/">Visit klairepacks.org</a></p>
+<!-- Footer: same as the main site (e.g. impact.html), with hello@ contact. -->
+<footer class="site-foot" style="background:#26221D;color:#b8afa2;padding:52px 44px 44px">
+    <div class="m-stack" style="max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:36px;font-size:13.5px">
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <img src="img/logo-paper.svg" alt="Klaire Packs" height="56" style="display:block;height:56px;width:auto;align-self:flex-start">
+        <div style="font-family:'Spectral',serif;font-style:italic;font-size:17px;color:#D89468">In honour of Klaire.</div>
+        <div style="line-height:1.7">Australian not-for-profit association<br>ABN 28 968 180 521<br><a href="mailto:hello@klairepacks.org" style="color:#b8afa2">hello@klairepacks.org</a></div>
+        <a class="nav" href="Design-System.html" style="color:#b8afa2">Brand &amp; media kit</a>
+      </div>
+      <div class="m-hide" style="display:flex;flex-direction:column;gap:10px">
+        <div style="color:#F5EFE3;font-weight:600;margin-bottom:2px">Support</div>
+        <a class="nav" href="donate.html" style="color:#b8afa2">Donate</a>
+        <a class="nav" href="sponsor.html" style="color:#b8afa2">Sponsor a journey</a>
+        <a class="nav" href="supporters.html" style="color:#b8afa2">Supporters</a>
+        <a class="nav" href="transparency.html" style="color:#b8afa2">Transparency</a>
+      </div>
+      <div class="m-hide" style="display:flex;flex-direction:column;gap:10px">
+        <div style="color:#F5EFE3;font-weight:600;margin-bottom:2px">The work</div>
+        <a class="nav" href="packs.html" style="color:#b8afa2">The packs</a>
+        <a class="nav" href="for-centres.html" style="color:#b8afa2">For centres</a>
+        <a class="nav" href="screening-rules.html" style="color:#b8afa2">Screening rules</a>
+        <a class="nav" href="impact.html" style="color:#b8afa2">Impact</a>
+      </div>
     </div>
-    <div class="fine">
-      <p class="help">Worried about yourself or someone you love? Call the National Alcohol and Other Drug Hotline on <a href="tel:1800250015">1800 250 015</a>, any time. It's free and confidential.</p>
-      <p>Klaire Packs is an Australian not-for-profit association, not a registered charity. Gifts are not tax-deductible. Australian Business Number (ABN) 28 968 180 521.</p>
-      <p>Klaire Packs is not an official charity partner of the Sydney Marathon.</p>
-    </div>
-  </div>
+    <div style="max-width:1200px;margin:30px auto 0;padding-top:20px;border-top:1px solid rgba(245,239,227,.12);font-size:12.5px;line-height:1.7">Klaire Packs is a not-for-profit association and is not a registered charity,&nbsp; gifts are not tax-deductible. Payments are handled by Zeffy; no card details are stored on this site.</div>
 </footer>
 
-<div class="sticky" id="sticky"><a class="btn" href="#give">Donate</a></div>
+<div class="sticky" id="sticky"><a class="btn" href="#give">Sponsor Alice</a></div>
 
 <script>
-  // Phones: the sticky Donate bar shows after the top section and hides while the Give section is on screen.
+  // Phones: the sticky Sponsor Alice bar shows after the top section and hides while the Give section is on screen.
   (function(){
     var sticky = document.getElementById('sticky'), hero = document.getElementById('top'), give = document.getElementById('give');
     if (!('IntersectionObserver' in window) || !sticky) return;
