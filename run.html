@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Remove this robots line at public launch (brief item 12). -->
 <meta name="robots" content="noindex, nofollow">
-<title>Run for Klaire — Klaire Packs</title>
-<meta name="description" content="[Runner name] is running the Sydney Marathon for Klaire. $85 supports one woman through recovery.">
-<meta property="og:title" content="Run for Klaire — Klaire Packs">
-<meta property="og:description" content="[Runner name] is running the Sydney Marathon for Klaire. $85 supports one woman through recovery.">
+<title>Run the Sydney Marathon for Klaire Packs</title>
+<meta name="description" content="[Runner name] is running the Sydney Marathon for Klaire Packs. $85 gives one woman in recovery three care packs.">
+<meta property="og:title" content="Run the Sydney Marathon for Klaire Packs">
+<meta property="og:description" content="[Runner name] is running the Sydney Marathon for Klaire Packs. $85 gives one woman in recovery three care packs.">
 <meta property="og:type" content="website">
 <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -56,6 +56,7 @@
     background:repeating-linear-gradient(135deg,var(--sand) 0 14px,var(--paper) 14px 28px);border:2px dashed rgba(184,92,56,.6);border-radius:18px;color:var(--terra-deep)}
   .ph-img b{font-family:'Spectral',serif;font-weight:600;font-size:21px;color:var(--ink)}
   .ph-img span{font-size:16px;line-height:1.5;color:var(--body);max-width:340px}
+  .ph-img .ph-tag{color:#fff !important;max-width:none}
   .ph-tag{font-size:16px;font-weight:700;color:#fff;background:var(--terra-deep);border-radius:100px;padding:4px 14px}
 
   /* Hero */
@@ -85,22 +86,16 @@
   .pack .in{padding:24px;display:flex;flex-direction:column;gap:10px;flex:1}
   .pack .when{font-size:16px;font-weight:600}
   .pack p{color:var(--body);font-size:17px}
-  .pack .price{font-family:'Spectral',serif;font-size:34px;font-weight:600;line-height:1;margin-top:auto;padding-top:12px}
-  .pack .price small{font-family:'Public Sans',sans-serif;font-size:16px;font-weight:500;color:var(--body)}
-  .pack .btn{width:100%;margin-top:6px}
+  .pack .band{font-family:'Spectral',serif;font-style:italic;font-size:20px;color:var(--ink)}
+  .pack .eg{margin-top:auto;padding-top:14px;border-top:1px solid var(--line)}
+  .pack .eg b{display:block;font-size:16px;font-weight:600;color:var(--ink);margin-bottom:4px}
+  .pack ul{margin:0;padding-left:20px;font-size:17px;color:var(--body);display:flex;flex-direction:column;gap:2px}
   .pack.welcome .when{color:var(--terra-deep)} .pack.steady .when{color:var(--sage-deep)} .pack.onward .when{color:var(--onward-deep)}
-  .pack.whole{border:2px solid var(--terra)}
-  .tag{align-self:flex-start;font-size:16px;font-weight:600;color:var(--terra-deep);background:#F6E7E0;border-radius:100px;padding:3px 12px}
 
   /* Give */
   .give{padding:56px 0 24px}
   .give-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:44px;align-items:start}
-  .amounts{display:flex;flex-direction:column;gap:12px;margin:22px 0 22px}
-  .amt{display:flex;gap:18px;align-items:center;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:16px 20px}
-  .amt b{font-family:'Spectral',serif;font-size:30px;font-weight:600;min-width:72px;color:var(--ink)}
-  .amt span{font-size:17px;color:var(--body)}
-  .amt.top{border:2px solid var(--terra)}
-  .amt .tag{margin-left:auto;flex:none}
+  .prices{font-size:20px;line-height:1.6;color:var(--ink);margin:16px 0 24px}
   .reassure{background:var(--sand);border-radius:16px;padding:24px 26px}
   .reassure h3{font-size:22px;margin-bottom:12px}
   .reassure ul{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:10px;font-size:17px;color:var(--body)}
@@ -108,7 +103,6 @@
   .formbox .embed{border-radius:12px;overflow:hidden;background:#fff;border:1px solid var(--line);min-height:200px}
   .formbox .note{font-size:16px;color:var(--body);margin-top:14px}
   .phone-give{display:none}
-  .monthly{margin-top:16px;font-size:17px}
 
   /* Progress (hidden until 10% of goal) */
   .progress{padding:40px 0 8px}
@@ -151,8 +145,8 @@
     .story{padding:52px 0}
     .story .km{font-size:23px}
     .pack-grid,.give-grid,.foot-grid{grid-template-columns:1fr}
-    .amt{flex-wrap:wrap}
-    .amt .tag{margin-left:0}
+    .top .btn{display:none}
+    .formbox{background:transparent;border:0;padding:0}
     .formbox .embed,.formbox .note{display:none}
     .phone-give{display:block}
     .phone-give .btn{width:100%}
@@ -172,39 +166,37 @@
 </header>
 
 <main>
-  <!-- 2. Top section: who Klaire was, what a gift does, one button. -->
+  <!-- 2. Top section: what Klaire Packs does, the race, one button. -->
   <section class="wrap hero" id="top">
     <div>
-      <h1><span class="ph">[Runner name]</span> is running the Sydney Marathon for Klaire.</h1>
+      <h1><span class="ph">[Runner name]</span> is running the Sydney Marathon for Klaire Packs.</h1>
       <div class="intro">
-        <p>Klaire was <span class="ph">[my sister / our daughter / my friend]</span>. She died while in treatment<span class="ph">[ in year — family to confirm wording]</span>.</p>
-        <p>Klaire Packs gives care packs to women in recovery, so no one goes through it alone.</p>
-        <p>The race is on Sunday 29 August 2027. Every kilometre <span class="ph">[Runner name]</span> runs is a care pack for a woman in recovery.</p>
+        <p>Klaire Packs gives free care packs to women in residential recovery, so no one goes through it alone.</p>
+        <p>The race is on Sunday 29 August 2027. <span class="ph">[Runner name]</span> will run 42 kilometres. Every gift turns that effort into care packs.</p>
       </div>
       <a class="btn give-link" href="#give">Give a care pack</a>
-      <p class="under">$85 supports one woman through recovery.</p>
+      <p class="under">$85 gives one woman all three care packs.</p>
     </div>
     <div class="ph-img" style="height:500px" role="img" aria-label="Photo to come">
-      <span class="ph-tag">Photo to supply · family to approve</span>
-      <b>A photo of Klaire, or of the runner holding the three packs</b>
-      <span>Portrait or landscape, at least 1600 pixels on the long side, natural light. Alt text to write, for example "Klaire smiling on the beach".</span>
+      <span class="ph-tag">Photo to supply</span>
+      <b>[Runner name] holding the Welcome, Steady and Onward packs</b>
+      <span>Portrait or landscape, at least 1600 pixels on the long side, natural light. Alt text: "[Runner name] holding the Welcome, Steady and Onward care packs".</span>
     </div>
   </section>
 
-  <!-- 3. Klaire's story, in the runner's words. -->
+  <!-- 3. The runner's reasons, in their own words. -->
   <section class="story" id="story">
     <div class="wrap">
       <div class="measure">
-        <h2>Why I'm running for Klaire</h2>
+        <h2>Why I'm running for Klaire Packs</h2>
         <div class="body">
-          <p><span class="ph">[Paragraph 1: who Klaire was, in words the family approves. Short sentences, under 20 words each.]</span></p>
-          <p><span class="ph">[Paragraph 2: what happened, at the level of detail the family is comfortable with. "Klaire died while in treatment" is enough.]</span></p>
-          <p><span class="ph">[Paragraph 3: why you're running, and what you hope each gift does.]</span></p>
+          <p><span class="ph">[Paragraph 1: why recovery, or this cause, matters to you. Short sentences, under 20 words each.]</span></p>
+          <p><span class="ph">[Paragraph 2: why you chose Klaire Packs, and what a care pack gives a woman at a hard time.]</span></p>
+          <p><span class="ph">[Paragraph 3: what 42 kilometres will ask of you, and what you hope each gift does.]</span></p>
           <p class="sign">— <span class="ph">[Runner name]</span></p>
         </div>
-        <p class="km">A marathon is 42.195 kilometres. The last 195 metres are for Klaire.</p>
         <p class="latest"><b>Latest from <span class="ph">[Runner name]</span>:</b> <span class="ph">[One line, updated monthly. For example: "Week 12. My longest run yet: 24 kilometres."]</span></p>
-        <p style="margin-top:20px;font-size:17px">Want to know more about the charity? <a href="https://klairepacks.org/">Visit klairepacks.org</a></p>
+        <p style="margin-top:20px;font-size:17px">Want to know more about Klaire Packs? <a href="https://klairepacks.org/">Visit klairepacks.org</a></p>
       </div>
     </div>
   </section>
@@ -213,38 +205,34 @@
   <section class="wrap packs" id="packs">
     <div class="packs-head">
       <h2>What your gift buys</h2>
-      <p>Each pack is for a different stage of recovery. A woman gets one when she arrives, one in the middle of treatment, and one when she leaves.</p>
+      <p>Klaire Packs gives free care packs to women in residential recovery. Each woman gets three: one when she arrives, one in the middle of treatment, and one when she leaves. Your gift pays for them.</p>
     </div>
     <div class="pack-grid">
       <article class="pack welcome">
         <img src="img/pack-welcome.jpeg" alt="The Welcome pack: a kraft box with a terracotta band, beside dried eucalyptus">
         <div class="in">
           <span class="when">When she arrives</span>
-          <h3>Welcome pack</h3>
-          <p>For the first hard days, when everything feels overwhelming.</p>
-          <div class="price">$28</div>
-          <a class="btn give-link" href="#give">Give a Welcome pack</a>
+          <h3>Welcome</h3>
+          <p class="band">A new foundation, built with care.</p>
+          <div class="eg"><b>For example:</b><ul><li>Sunscreen</li><li>An eye mask</li><li>Period products</li></ul></div>
         </div>
       </article>
       <article class="pack steady">
         <img src="img/pack-steady.jpeg" alt="The Steady pack: a kraft box with a sage green band">
         <div class="in">
           <span class="when">In the middle of treatment</span>
-          <h3>Steady pack</h3>
-          <p>For the middle stretch, when motivation dips and progress feels slow.</p>
-          <div class="price">$42</div>
-          <a class="btn give-link" href="#give">Give a Steady pack</a>
+          <h3>Steady</h3>
+          <p class="band">Rest is doing something.</p>
+          <div class="eg"><b>For example:</b><ul><li>A journal and pen</li><li>Cosy socks</li><li>A square of chocolate</li></ul></div>
         </div>
       </article>
-      <article class="pack onward whole">
+      <article class="pack onward">
         <img src="img/pack-onward.jpeg" alt="The Onward pack: a kraft box with a brown band">
         <div class="in">
-          <span class="tag">Most meaningful</span>
           <span class="when">When she leaves</span>
-          <h3>Onward pack, and the whole journey</h3>
-          <p>For leaving, practical and hopeful. $85 gives one woman all three packs, from her first week to leaving treatment.</p>
-          <div class="price">$85 <small>all three packs</small></div>
-          <a class="btn give-link" href="#give">Give all three packs</a>
+          <h3>Onward</h3>
+          <p class="band">Stepping into tomorrow.</p>
+          <div class="eg"><b>For example:</b><ul><li>A cap or beanie</li><li>A card of local support services</li><li>A seed packet</li></ul></div>
         </div>
       </article>
     </div>
@@ -256,12 +244,10 @@
     <div class="give-grid">
       <div>
         <h2>Give a care pack</h2>
-        <p style="margin-top:12px;color:var(--body)">Choose an amount on the form. Here is what each gift does.</p>
-        <div class="amounts">
-          <div class="amt"><b>$28</b><span>A Welcome pack for a woman's first hard days</span></div>
-          <div class="amt"><b>$42</b><span>A Steady pack for the middle of treatment</span></div>
-          <div class="amt top"><b>$85</b><span>All three packs: one woman, start to finish</span><span class="tag">Most meaningful</span></div>
-          <div class="amt"><b style="font-size:22px">Other</b><span>Any amount helps</span></div>
+        <p class="prices"><b>$85 gives one woman the full journey: all three packs.</b> $28 pays for a Welcome pack and $42 for a Steady pack. Any amount helps.</p>
+        <div class="phone-give" style="margin-bottom:24px">
+          <a class="btn" href="https://www.zeffy.com/en-AU/ticketing/sydney-marathon">Donate now</a>
+          <p style="margin-top:12px;font-size:17px;color:var(--body)">You'll go to our secure payment page, run by Zeffy.</p>
         </div>
         <div class="reassure">
           <h3>Before you give</h3>
@@ -285,12 +271,6 @@
           </div>
         </div>
         <p class="note">This is our secure payment form, run by Zeffy.</p>
-        <!-- Phone: same-tab link to Zeffy (Back button still works). -->
-        <div class="phone-give">
-          <a class="btn zeffy" href="https://www.zeffy.com/en-AU/ticketing/sydney-marathon">Donate now</a>
-          <p style="margin-top:12px;font-size:17px;color:var(--body)">You'll go to our secure payment page, run by Zeffy.</p>
-        </div>
-        <p class="monthly">Prefer to give monthly? <a class="zeffy" href="https://www.zeffy.com/en-AU/ticketing/sydney-marathon">10 monthly gifts of $8.50</a></p>
       </div>
     </div>
   </section>
@@ -309,7 +289,7 @@
     <div class="measure">
       <h2>Questions</h2>
       <details><summary>Who gets the care packs?</summary><p>Women at a residential recovery clinic in Sydney. The clinic hands each woman her pack at the right stage of her treatment.</p></details>
-      <details><summary>Will I get a receipt?</summary><p>Yes. Zeffy emails you a receipt straight away. Gifts aren't tax-deductible, because Klaire Packs is not a registered charity.</p></details>
+      <details><summary>Will I get a receipt?</summary><p>Yes. Zeffy emails you a receipt. Gifts aren't tax-deductible, because Klaire Packs is not a registered charity.</p></details>
       <details><summary>Can I run or fundraise with you?</summary><p>Yes, we'd love that. Email <a href="mailto:luke@klairepacks.org">luke@klairepacks.org</a> and we'll get back to you.</p></details>
     </div>
   </section>
@@ -320,7 +300,7 @@
   <div class="wrap foot-grid">
     <div>
       <img src="img/logo-paper.svg" alt="Klaire Packs" height="52" style="height:52px;width:auto">
-      <p class="honour">In honour of Klaire.</p>
+      <p class="honour">Made with care.</p>
       <p>Contact: <a href="mailto:luke@klairepacks.org">luke@klairepacks.org</a><br>
       <a href="https://klairepacks.org/">Visit klairepacks.org</a></p>
     </div>
@@ -332,22 +312,17 @@
   </div>
 </footer>
 
-<div class="sticky" id="sticky"><a class="btn zeffy" href="https://www.zeffy.com/en-AU/ticketing/sydney-marathon">Donate</a></div>
+<div class="sticky" id="sticky"><a class="btn" href="#give">Donate</a></div>
 
 <script>
-  // Phones: give buttons go straight to Zeffy in the same tab; sticky bar appears after the top section.
+  // Phones: the sticky Donate bar shows after the top section and hides while the Give section is on screen.
   (function(){
-    var phone = window.matchMedia('(max-width:760px)');
-    var zeffy = 'https://www.zeffy.com/en-AU/ticketing/sydney-marathon';
-    function setLinks(){
-      document.querySelectorAll('.give-link').forEach(function(a){ a.href = phone.matches ? zeffy : '#give'; });
-    }
-    setLinks();
-    if (phone.addEventListener) phone.addEventListener('change', setLinks);
-    var sticky = document.getElementById('sticky'), hero = document.getElementById('top');
-    if ('IntersectionObserver' in window && sticky && hero){
-      new IntersectionObserver(function(e){ sticky.classList.toggle('on', !e[0].isIntersecting); }).observe(hero);
-    }
+    var sticky = document.getElementById('sticky'), hero = document.getElementById('top'), give = document.getElementById('give');
+    if (!('IntersectionObserver' in window) || !sticky) return;
+    var heroIn = true, giveIn = false;
+    function update(){ sticky.classList.toggle('on', !heroIn && !giveIn); }
+    new IntersectionObserver(function(e){ heroIn = e[0].isIntersecting; update(); }).observe(hero);
+    new IntersectionObserver(function(e){ giveIn = e[0].isIntersecting; update(); }).observe(give);
   })();
 </script>
 </body>
